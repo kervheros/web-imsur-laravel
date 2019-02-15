@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: IMSUR
+        psr4_prefix: IMSUR
+        src_path: app
