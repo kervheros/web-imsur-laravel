@@ -2,6 +2,8 @@
 
 use IMSUR\Http\Requests;
 use IMSUR\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 
@@ -74,9 +76,13 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
-		//
+		$user = \IMSUR\User::find($id);
+		$user->fill($request->all());
+		$user->save();
+		Session::flash('message','Usuario editado correctamente');
+		return redirect::to('/usuario');
 	}
 
 	/**
