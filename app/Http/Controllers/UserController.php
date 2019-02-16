@@ -93,7 +93,9 @@ class UserController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		\IMSUR\User::destroy($id);
+		Session::flash('message','Usuario eliminado correctamente');
+		return redirect::to('/usuario');
 	}
 
 }
