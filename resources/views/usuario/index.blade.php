@@ -20,7 +20,9 @@
     <tbody>
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
-      <td></td>
+      <td>
+          {!!link_to_route('usuario.edit', $title='Editar',$parameters = $user->id, $attributes=['class'=>'btn btn-primary'])!!}
+      </td>
     </tbody>
     @endforeach
   </table>

@@ -64,7 +64,8 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = \IMSUR\User::find($id);
+		return view ('usuario.edit',['user'=>$user]);
 	}
 
 	/**
