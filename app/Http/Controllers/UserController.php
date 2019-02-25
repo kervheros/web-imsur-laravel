@@ -1,6 +1,8 @@
 <?php namespace IMSUR\Http\Controllers;
 
 use IMSUR\Http\Requests;
+use IMSUR\Http\Requests\UserUpdateRequest;
+use IMSUR\Http\Requests\UserCreateRequest;
 use IMSUR\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -16,7 +18,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		$users=\IMSUR\User::All();
+		$users=\IMSUR\User::paginate(1);
 		return view ('usuario.index',compact('users'));
 	}
 
@@ -36,7 +38,7 @@ class UserController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(UserCreateRequest $request)
 	{
 		\IMSUR\User::create([
 			'name'=>$request['name'],
@@ -76,7 +78,7 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $request)
+	public function update($id, UserUpdateRequest $request)
 	{
 		$user = \IMSUR\User::find($id);
 		$user->fill($request->all());
