@@ -33,8 +33,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function setPasswordAttribute($valor){
 		if(!empty($valor)){
-			$this->attributes['password'] =\Hash::make($valor);
+			$this->attributes['password'] =($valor);
 		}
+	}
+
+	public function scopeSearch ($query, $name){
+		return $query -> where('name','LIKE',"%$name%");
 	}
 
 }

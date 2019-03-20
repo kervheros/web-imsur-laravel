@@ -33,7 +33,14 @@
             </div>
 
 
+
+
+
+
             <ul class="nav navbar-top-links navbar-right">
+
+
+
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -47,24 +54,53 @@
                         <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
-                </li>
+                  </li>
+
             </ul>
+
+
+                  <!--{!! Form::open(['route'=>'usuario.index','method'=>'GET','class'=>'navbar-from pull-right'])!!}
+
+              <div class="input-group">
+                  {!!Form::text('name',null,['class'=>'form-control','placelholder'=>'buscar articulo..','aria-describedby'=>'search'])!!}
+              </div>
+              <div>
+                    <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </div>
+                  <!--<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>-->
+              <!--{!! Form::close()!!}-->
+
+
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <li class="nav nav-second-level" >
+
+                          {!! Form::open(['route'=>'usuario.index','method'=>'GET','class'=>'navbar-from pull-right'])!!}
+                            <div class="input-group">
+                              {!!Form::text('name',null,['class'=>'form-control','placelholder'=>'buscar articulo..','aria-describedby'=>'search'])!!}
+
+                              <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+
+                            </div>
+                          {!! Form::close()!!}
+
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="{{route('usuario.create')}}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
+                                    <a href="{{route('usuario.index')}}"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -86,7 +122,7 @@
                                     <a href="#"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
 
                     </ul>
                 </div>

@@ -2,12 +2,9 @@
 @section('content')
 @include('alerts.request')
 
-{!!Form::model($user,['route'=>['usuario.update',$user->id],'method'=>'PUT'])!!}
-
 @include('usuario.form.usr')
 
-
-
+{!!Form::model($user,['route'=>['usuario.update',$user->id],'method'=>'PUT'])!!}
 {!!Form::submit('Actualizar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}
 

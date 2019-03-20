@@ -10,15 +10,23 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
+	//public function __construct(){
+	//	$this->middleware('auth');
+		//$this->beforeFilter('@find',['only'=>['edit','update','destroy']]);
+	//}
+	//public function find (Route $route){
+		//$this->user = \IMSUR\User::find($route->getParameter('usuario'));
+	//}
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$users=\IMSUR\User::paginate(1);
+		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(10);
+		//$users=\IMSUR\User::paginate(2);
 		return view ('usuario.index',compact('users'));
 	}
 
@@ -30,7 +38,6 @@ class UserController extends Controller {
 	public function create()
 	{
 			return view('usuario.create');
-
 	}
 
 	/**
@@ -46,7 +53,7 @@ class UserController extends Controller {
 			'password'=>$request['password'],
 		]);
 
-		return redirect('/usuario')->with('message','store');
+		return redirect('/usuario')->with('message','Usuario registrado correctamente');
 	}
 
 	/**
