@@ -21,3 +21,4 @@ Route::get('home', 'HomeController@index');
 
 
 Route::resource('usuario','UserController');
+Route::resource('log','LogController');

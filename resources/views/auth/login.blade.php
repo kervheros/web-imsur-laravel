@@ -18,21 +18,33 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					@include('alerts.errors')
+
+					{!!Form::open(['route'=>'log.store','method'=>'POST'])!!}
+					<!--<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							{!!Form::label('correo','Direccion de correo:',['class'=>'col-md-4 control-label'])!!}
+							<div div class="col-md-6">
+							{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese el correo'])!!}
+							</div>
+
+							<!--<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
+							</div>-->
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+							{!!Form::label('password','Contraseña:',['class'=>'col-md-4 control-label'])!!}
+							<div class="col-md-6">
+							{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese su contraseña'])!!}
+							</div>
+							<!--<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">
-							</div>
+							</div>-->
 						</div>
 
 						<div class="form-group">
@@ -46,13 +58,17 @@
 						</div>
 
 						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
+
+							{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
+
+							<!--<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Login</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
+							</div>-->
 						</div>
-					</form>
+						{!!Form::close()!!}
+					<!--</form>-->
 				</div>
 			</div>
 		</div>

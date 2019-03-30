@@ -12,7 +12,7 @@ class FrontController extends Controller {
   //}
 
    public function index(){
-        return view('layouts.admin');
+        return view('auth.login');
    }
 
    public function contacto(){
