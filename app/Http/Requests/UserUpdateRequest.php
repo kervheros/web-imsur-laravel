@@ -24,8 +24,9 @@ class UserUpdateRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required',
-            'email'=>'required',
+          'name'=>'required',
+          'email'=>'required',
+          'password' => 'required|min:6|regex:^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,16}$^',
         ];
     }
 }

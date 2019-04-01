@@ -50,7 +50,7 @@ class UserController extends Controller {
 		\IMSUR\User::create([
 			'name'=>$request['name'],
 			'email'=>$request['email'],
-			'password'=>$request['password'],
+			'password'=>bcrypt($request['password']),
 		]);
 
 		return redirect('/usuario')->with('message','Usuario registrado correctamente');
