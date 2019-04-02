@@ -31,12 +31,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	public function setPasswordAttribute($valor){
+	/*public function setPasswordAttribute($valor){
 		if(!empty($valor)){
 			//$this->attributes['password'] =($valor);
 			$this->attributes['password'] =\Hash::make($valor);
 		}
-	}
+	}*/
 
 	public function scopeSearch ($query, $name){
 		return $query -> where('name','LIKE',"%$name%");
