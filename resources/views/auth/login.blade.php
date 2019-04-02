@@ -11,14 +11,15 @@
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
 							<ul>
-								@foreach ($errors->all() as $error)
+								<!--@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
-								@endforeach
+								@endforeach-->
 							</ul>
 						</div>
 					@endif
 
 					@include('alerts.errors')
+					@include('alerts.request')
 
 					{!!Form::open(['route'=>'log.store','method'=>'POST'])!!}
 					<!--<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
