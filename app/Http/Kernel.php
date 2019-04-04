@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'IMSUR\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'IMSUR\Http\Middleware\RedirectIfAuthenticated',
+		'admin' => 'IMSUR\Http\Middleware\Admin',
 	];
 
 }

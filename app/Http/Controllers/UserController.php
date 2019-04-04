@@ -8,15 +8,18 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class UserController extends Controller {
-	//public function __construct(){
-	//	$this->middleware('auth');
-		//$this->beforeFilter('@find',['only'=>['edit','update','destroy']]);
-	//}
-	//public function find (Route $route){
-		//$this->user = \IMSUR\User::find($route->getParameter('usuario'));
-	//}
+	public function __construct(){
+		$this->middleware('auth');
+		$this->middleware('admin',['only'=>['create','edit']]);
+		$this->beforeFilter('@find',['only'=>['edit','update','destroy']]);
+	}
+
+	public function find (Route $route){
+		$this->user = \IMSUR\User::find($route->getParameter('usuario'));
+	}
 
 	/**
 	 * Display a listing of the resource.

@@ -86,6 +86,7 @@
                           {!! Form::close()!!}
 
                         </li>
+                      @if(Auth::user()->id ==1)
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -97,19 +98,20 @@
                                 </li>
                             </ul>
                         </li>
-                        <!--<li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
+                      @endif
+                        <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Proveedores<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Peliculas</a>
+                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Consultas</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li>
+                        <!--<li>
                             <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
