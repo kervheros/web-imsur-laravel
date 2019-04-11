@@ -28,7 +28,7 @@ class UserController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(10);
+		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(8);
 		//$users=\IMSUR\User::paginate(2);
 		return view ('usuario.index',compact('users'));
 	}
