@@ -12,7 +12,7 @@ class FrontController extends Controller {
   }
 
    public function index(){
-        return view('auth.login');
+        return view('index');
    }
 
    public function contacto(){
@@ -25,6 +25,10 @@ class FrontController extends Controller {
 
    public function admin(){
         return view('admin.index');
+   }
+
+   public function login(){
+     return view('admin.index');
    }
 
 }
