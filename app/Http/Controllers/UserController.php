@@ -110,4 +110,9 @@ class UserController extends Controller {
 		return redirect::to('/usuario');
 	}
 
+
+	public function login(){
+		return view('auth.login');
+	}
+
 }

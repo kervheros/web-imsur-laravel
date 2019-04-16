@@ -278,7 +278,7 @@ else
             </div><!-- end columns -->
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                 <div class="topmenu">
-                	<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/app') }}">Login / Register</a></span>
+                	<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/login') }}">Login / Register</a></span>
 
 
 

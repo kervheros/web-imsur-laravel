@@ -25,4 +25,4 @@ Route::resource('log','LogController');
 
 Route::get('logout','LogController@logout');
 
-Route::get('auth','FrontController@login');
+Route::get('login','FrontController@log');

@@ -27,8 +27,8 @@ class FrontController extends Controller {
         return view('admin.index');
    }
 
-   public function login(){
-     return view('admin.index');
+   public function log(){
+     return view('auth.login');
    }
 
 }
