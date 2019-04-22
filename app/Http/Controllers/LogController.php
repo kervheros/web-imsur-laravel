@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use IMSUR\Http\Requests\UserCreateRequest;
 use IMSUR\Http\Requests;
 use IMSUR\Http\Requests\LoginRequest;
 use IMSUR\Http\Controllers\Controller;
 
 use IMSUR\Http\Controllers\LogControlles;
+
+
 
 class LogController extends Controller
 {
@@ -48,7 +51,7 @@ class LogController extends Controller
           return Redirect::to('admin');
         }
         Session::flash('message-error','Datos son incorrectos');
-        return Redirect::to('/');
+        return Redirect::to('/login');
 
     }
 
@@ -101,4 +104,6 @@ class LogController extends Controller
     {
         //
     }
+
+
 }

@@ -26,3 +26,6 @@ Route::resource('log','LogController');
 Route::get('logout','LogController@logout');
 
 Route::get('login','FrontController@log');
+Route::get('register','FrontController@create');
+
+Route::resource('auth','FrontController');

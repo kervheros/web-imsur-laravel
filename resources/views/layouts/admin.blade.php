@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IMSUR ADMIN</title>
+    <title>  IMSUR  -  Ingenio Minero del Sur</title>
 
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/metisMenu.min.css')!!}
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Imsur Admin</a>
+                <a class="navbar-brand" href="index.html">  IMSUR  -  Ingenio Minero del Sur</a>
             </div>
 
 
