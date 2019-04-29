@@ -44,27 +44,27 @@ else
   <meta name="author" content="">
 
   <!-- Bootstrap Styles -->
-  <link href="css/css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- Styles -->
-  <link href="css/css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 <!-- Styles -->
-  <link href="css/css/paginas.css" rel="stylesheet">
+  <link href="css/paginas.css" rel="stylesheet">
 
 <!-- style-->
 
-  <link href="css/css/peque_maquetacion.css" rel="stylesheet">
+  <link href="css/peque_maquetacion.css" rel="stylesheet">
 
 
   <!-- Carousel Slider -->
-  <link href="css/css/owl-carousel.css" rel="stylesheet">
+  <link href="css/owl-carousel.css" rel="stylesheet">
 
   <!-- CSS Animations -->
-  <link href="css/css/animate.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet">
 
   <!-- css boton redondo -->
-  <link href="css/css/boton_redondo.css" rel="stylesheet">
+  <link href="css/boton_redondo.css" rel="stylesheet">
 
 
   <!-- Google Fonts -->
