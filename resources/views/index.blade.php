@@ -9,17 +9,17 @@ function comprobar(esto)
 {
 var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 if(es_chrome){
-			    alert("Sera abierto un nuevo enlace");
+			    alert("El navegador que se está utilizando es Chrome");
 				//location.href="https://api.whatsapp.com/send?phone=59170455869&text=Hola%20deseo%20informacion"     habre en el mismo enlace
-				window.open('https://api.whatsapp.com/send?phone=59170455869&text=Hola%20deseo%20tener%20mas%20informacion', '_blank');			//habre en una nueva pestaña
+				window.open('https://api.whatsapp.com/send?phone=59165490807&text=Hola%20deseo%20informacion', '_blank');			//habre en una nueva pestaña
 
 
 
 }
 else
 {
-			    alert("Sera abierto un nuevo enlace");
-				window.open('https://web.whatsapp.com/send?phone=59170455869&text=Hola%20deseo%20tener%20mas%20informacion', '_blank');
+			    alert("El navegador que se está utilizando es Firefox");
+				window.open('https://web.whatsapp.com/send?phone=59165490807&text=Hola%20deseo%20informacion', '_blank');
 				//location.href="https://web.whatsapp.com/send?phone=59170455869&text=Hola%20deseo%20informacion"
 
 
@@ -28,53 +28,9 @@ else
 }
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script>
-	$(document).ready(function(e) {
-		$('#central').on('click', function(){
-
-			$('#contenido').attr('src', 'central.html');
-		});
-		$('#general').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/g-general.html');
-
-		});
-		$('#operativa').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/g-operativa.html');
-
-		});
-		$('#admin').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/administracion.html');
-
-		});
-		$('#tesoreria').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/tesoreria.html');
-
-		});
-		$('#almacen').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/almacenes.html');
-
-		});
-		$('#caja').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/caja.html');
-
-		});
-		$('#conta').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/contabilidad.html');
-
-		});
-		$('#comercio').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/comercio.html');
-
-		});
-		$('#planta').on('click', function(){
-			$('#contenido').attr('src', 'pag-ref/planta.html');
-
-		});
 
 
-	});
-</script>
+
 
 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -82,26 +38,10 @@ else
   <title>Empresa Minera IMSUR</title>
 	<link rel="icon" href="images/logo.png">
 
-
-	<style>
-
-
-
-
-
-
-	</style>
-
-
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
-
-  <!-- dark style-->
-  <!--<link href="dark-style.css" rel="stylesheet">-->
 
   <!-- Bootstrap Styles -->
   <link href="css/css/bootstrap.css" rel="stylesheet">
@@ -169,8 +109,6 @@ else
 </head>
 <body>
 
-<div id="main">
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -179,69 +117,6 @@ else
   js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-<div class="demo_changer">
-			<div class="demo-icon"><i class="fa fa-cog fa-spin fa-2x"></i></div>
-                <div class="form_holder">
-                    <h4>CHOOSE YOUR STYLE</h4>
-
-                    <div class="predefined_styles">
-					<form>
-						<select id="headers" class="show-menu-arrow selectpicker"  onChange="document.location = this.value" value="GO">
-                       	    <option value="">Change Header</option>
-                            <option value="header1.html">Header Style 1</option>
-                            <option value="header2.html">Header Style 2</option>
-                            <option value="header3.html">Header Style 3</option>
-						</select>
-						<select id="footers" class="show-menu-arrow selectpicker"  onChange="document.location = this.value" value="GO">
-                       	    <option value="">Change Footer</option>                            <option value="footer1.html#footer-style-1">Footer Style 1</option>
-                            <option value="footer2.html#footer-style-2">Footer Style 2</option>
-                            <option value="footer3.html#footer-style-3">Footer Style 3</option>
-						</select>
-						<select id="layouts" class="show-menu-arrow selectpicker"  onChange="document.location = this.value" value="GO">
-                       	    <option value="">Select Layout</option>
-                            <option value="fullwidth_layout.html">Fullwidth Layout</option>
-                            <option value="boxed_layout.html">Boxed Layout</option>
-						</select>
-					</form>
-                    <hr>
-                    <h4>LIGHT OR DARK</h4>
-                        <a href="#" rel="light" class="styleswitch"><img class="img-thumbnail" src="switcher/images/light.png" alt=""></a>
-                        <a href="#" rel="dark" class="styleswitch"><img class="img-thumbnail" src="switcher/images/dark.png" alt=""></a>
-                    <hr>
-                    <h4>PATTERNS</h4>
-					<div class="PatternChanger">
-						<a href="switcher/images/patterns/bg_01.jpg" class="bg_t"><img src="switcher/images/patterns/bg_01.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_02.jpg" class="bg_t"><img src="switcher/images/patterns/bg_02.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_03.jpg" class="bg_t"><img src="switcher/images/patterns/bg_03.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_04.jpg" class="bg_t"><img src="switcher/images/patterns/bg_04.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_05.jpg" class="bg_t"><img src="switcher/images/patterns/bg_05.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_06.jpg" class="bg_t"><img src="switcher/images/patterns/bg_06.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_07.jpg" class="bg_t"><img src="switcher/images/patterns/bg_07.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_08.jpg" class="bg_t"><img src="switcher/images/patterns/bg_08.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_09.jpg" class="bg_t"><img src="switcher/images/patterns/bg_09.jpg" alt=""></a>
-						<a href="switcher/images/patterns/bg_10.jpg" class="bg_t"><img src="switcher/images/patterns/bg_10.jpg" alt=""></a>
-					</div>
-					<hr>
-                    <h4>PREDEFINED SKINS</h4>
-                        <a href="#" rel="green" class="styleswitch"><img src="switcher/images/green.png" alt=""></a>
-                        <a href="#" rel="tael" class="styleswitch"><img src="switcher/images/tael.png" alt=""></a>
-                        <a href="#" rel="light-green" class="styleswitch"><img src="switcher/images/light-green.png" alt=""></a>
-                        <a href="#" rel="yellow" class="styleswitch"><img src="switcher/images/yellow.png" alt=""></a>
-                        <a href="#" rel="blue" class="styleswitch"><img src="switcher/images/blue.png" alt=""></a>
-                        <a href="#" rel="light-blue" class="styleswitch"><img src="switcher/images/light-blue.png" alt=""></a>
-                        <a href="#" rel="purple" class="styleswitch"><img src="switcher/images/purple.png" alt=""></a>
-                        <a href="#" rel="violet" class="styleswitch"><img src="switcher/images/violet.png" alt=""></a>
-                        <a href="#" rel="red" class="styleswitch"><img src="switcher/images/red.png" alt=""></a>
-                        <a href="#" rel="orange" class="styleswitch"><img src="switcher/images/orange.png" alt=""></a>
-                    </div>
-                    <hr>
-                    <p>This tools is just for demo site.</p>
-                </div>
-            </div>
 
 
 
@@ -262,12 +137,12 @@ else
     	<div class="container">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="social-icons">
-                    <span><a data-toggle="tooltip" data-placement="bottom" title="Facebook" href="https://www.facebook.com/ingeniomineroimsur/"><i class="fa fa-facebook"></i></a></span>
+                    <span><a data-toggle="tooltip" data-placement="bottom" title="Facebook" href="https://www.facebook.com/EmpresaMineraIMSUR/"><i class="fa fa-facebook"></i></a></span>
                     <span><a data-toggle="tooltip" data-placement="bottom" title="Google Plus" href="https://plus.google.com/106409971158160601590"><i class="fa fa-google-plus"></i></a></span>
                     <span><a data-toggle="tooltip" data-placement="bottom" title="Twitter" href="https://twitter.com/IMSUR3?lang=es"><i class="fa fa-twitter"></i></a></span>
                     <span><a data-toggle="tooltip" data-placement="bottom" title="Youtube" href="https://www.youtube.com/channel/UCRK__8QdxdLTO_pJMQmsbrg?view_as=subscriber"><i class="fa fa-youtube"></i></a></span>
                     <span><a data-toggle="tooltip" data-placement="bottom" title="Linkedin" href="https://www.linkedin.com/in/empresa-minera-imsur-secc-rosicler-62464916a/"><i class="fa fa-linkedin"></i></a></span>
-                    <span><a data-toggle="tooltip" data-placement="bottom" title="Dribbble" href="https://dribbble.com/Imsur"><i class="fa fa-dribbble"></i></a></span>
+                    <span><a data-toggle="tooltip" data-placement="bottom" title="Dribbble" href="#"><i class="fa fa-dribbble"></i></a></span>
                     <!--<span><a data-toggle="tooltip" data-placement="bottom" title="Skype" href="https://join.skype.com/invite/Ssi7wCNAFbfg"><i class="fa fa-skype"></i></a></span>
 					<span class="skype-button bubble " data-contact-id="amamani"></span>-->
 					<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
@@ -278,13 +153,16 @@ else
             </div><!-- end columns -->
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                 <div class="topmenu">
-                	<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/login') }}">Login / Register</a></span>
+                	<!--<span class="topbar-login"><i class="fa fa-user"></i> <a href="404.html">Login / Register</a></span>
+									<input type ='button' class="btn btn-warning"  value = 'boton' onclick="location.href = '{{ route('usuario.create') }}'"/>-->
+									<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/login') }}">Login / Register</a></span>
+
 
 
 
                 </div><!-- end top menu -->
             	<div class="callus">
-                	<span class="topbar-email"><i class="fa fa-envelope"></i> <a href="404.html">imsur@imsur.com.bo</a></span>
+                	<span class="topbar-email"><i class="fa fa-envelope"></i> <a href="404.html">info@imsur.com.bo</a></span>
                     <span class="topbar-phone"><i class="fa fa-phone"></i> +591-2-6227793</span>
                 </div><!-- end callus -->
             </div><!-- end columns -->
@@ -297,7 +175,8 @@ else
 
     <header id="header-style-1">
 
-	<div><a onclick="return comprobar(this)" title="TIENE DUDAS? ESCRÍBENOS O LLÁMANOS "><img class="zoom" border="0" style=position:fixed;float:right;bottom:320px;right:10px;display:scroll; src="images/what.ico" width="60" height="60" name="formu" id="formu" onsubmit="comprobar"></a></div>
+	<div ><a onclick="return comprobar(this)" title="TIENE DUDAS? ESCRÍBENOS O LLÁMANOS "><img class="zoom" border="0" style=position:fixed;float:right;bottom:320px;right:10px;display:scroll; src="images/what.ico" width="60" height="60" name="formu" id="formu" onsubmit="comprobar"></a></div>
+	<!--<div "><a target="blank" href="https://api.whatsapp.com/send?phone=59165490807&text=Hola%20deseo%20informacion" title="TIENE DUDAS? ESCRÍBENOS O LLÁMANOS "><img border="0" style=position:fixed;float:right;bottom:320px;right:10px;display:scroll; src="images/what.ico" width="60" height="60"></a></div>-->
 
 
 		<div class="container">
@@ -308,13 +187,12 @@ else
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--<a class="navbar-brand" src="images/flogo2.png"> IMSUR --><img class="navbar-brand" src="images/logo-principal.png" alt=""><!--</a>-->
-
+                    <!--<a class="navbar-brand">Ingenio Minero IMSUR</a>--> <img class="navbar-brand" src="images/logo-principal.png" alt="">
         		</div><!-- end navbar-header -->
 
 				<div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li class="dropdown yamm-fw"><a id="central" href="404.html" >Home <div ></div></a>
+						<li class="dropdown yamm-fw"><a href="#inicio" >Home <div ></div></a>
 
 
 
@@ -324,38 +202,9 @@ else
 
 					<!-- end drop down menu -->
 						</li><!-- end drop down -->
-                        <li><a href="404.html">Acerca de nosotros</a></li>
+                        <li><a href="#medio">Acerca de nosotros</a></li>
 
-						<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Recursos Humanos <div class="arrow-up"></div></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li class="dropdown-submenu">
-                                    <a href="#">Gerencia</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a id="general" href="404.html">General</a></li>
-                                        <li><a id="operativa" href="404.html">Operativa</a></li>
-                                    </ul><!-- end dropdown-menu -->
-                                </li>
-								<li><a id="admin" href="404.html">Administracion</a></li>
-								<li class="dropdown-submenu">
-                                    <a href="#">Tesoreria</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a id="tesoreria" href="404.html">Tesoreria</a></li>
-                                        <li><a id="caja" href="404.html">Caja</a></li>
-                                    </ul><!-- end dropdown-menu -->
-                                </li>
-								<li><a href="404.html">Sistemas</a></li>
-								<li><a id="conta" href="404.html">Contabilidad</a></li>
-								<li><a id="comercio" href="404.html">Comercializacion</a></li>
 
-								<li><a id="almacen" href="404.html">Almacenes</a></li>
-								<li><a id="planta" href="404.html">Planta</a></li>
-								<li><a id="minas" href="404.html">Minas</a></li>
-								<li><a id="seguridad" href="404.html">Medio Ambiente y Seguridad Industrial</a></li>
-								<li><a id="rrhh" href="404.html">RR.HH</a></li>
-								<li><a id="secre" href="404.html">Secretaria</a></li>
-                                <!-- end dropdown-submenu -->
-							</ul>
-						</li>
 
 						<li class="dropdown yamm-fw"><a href="404.html" data-toggle="dropdown" class="dropdown-toggle">Servicios<div class="arrow-up"></div></a>
 							<ul class="dropdown-menu">
@@ -366,7 +215,7 @@ else
                                                 <li><a href="404.html">About Style 1</a></li>
 
                                             </ul>
-                                            <ul class="col-sm-3">-
+                                            <ul class="col-sm-3">
                                                 <li><a href="404.html">Services Style 1</a></li>
 
 
@@ -385,7 +234,20 @@ else
                             </ul><!-- end drop down menu -->
 						</li><!-- end drop down -->
                         <!-- standard drop down -->
-
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Recursos Humanos <div class="arrow-up"></div></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="404.html">Masonry Style</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Classic Style</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="404.html">1 Column</a></li>
+                                        <li><a href="404.html">2 Columns</a></li>
+                                        <li><a href="404.html">3 Columns</a></li>
+                                        <li><a href="404.html">4 Columns</a></li>
+                                    </ul><!-- end dropdown-menu -->
+                                </li><!-- end dropdown-submenu -->
+			    </ul>
+			</li>
 
 
 
@@ -400,11 +262,13 @@ else
 
                         <!-- standard drop down -->
 
-                        <li><a href="404.html">Contactanos</a></li>
+                        <li><a href="#fin">Contactanos</a></li>
 					</ul><!-- end navbar-nav -->
 				</div><!-- #navbar-collapse-1 -->
-			</div><!-- end navbar yamm navbar-default -->,
+			</div><!-- end navbar yamm navbar-default -->
 		</div><!-- end container -->
+
+
 
 
 
@@ -413,9 +277,7 @@ else
 
   <!-- slider-wrapper -->
 
-
-	<iframe id="contenido" frameborder=0 marginwidth=0 marginheight=0 border=0 style=”border:0;margin:0;width:100%;height:470px;” src="central.blade.php" scrolling=”no” allowtransparency=”true”></iframe>
-
+	@yield('content')
 
   <!-- Main Scripts-->
   <script src="js/js/jquery.js"></script>
@@ -477,11 +339,6 @@ else
   <script type="text/javascript" src="switcher/js/fswit.js"></script>
   <script src="switcher/js/bootstrap-select.js"></script>
 
-
-
-
-
-</div>
 
 </body>
 
