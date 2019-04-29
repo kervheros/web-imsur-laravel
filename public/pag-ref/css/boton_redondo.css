@@ -1,0 +1,95 @@
+.boton{
+  width:30px;
+  height:30px;
+  background-color:#03800b;
+  margin: 5px;
+  padding:10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size:11px;
+  line-height:32px;
+  text-transform: uppercase;
+  float:left;
+}
+.boton:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
+}
+.boton a{
+  color:#fff;
+  text-decoration:none;
+  padding:5px 5px 5px 0;
+}
+
+
+
+/*.Boton-Circular::before {
+    border-radius    : 100%;                                /* Borde redondeado                */
+/*    width            : 0px;                                 /* Ancho a 0                       */
+/*    height           : 0px;                                 /* Altura a 0                      */
+/*    background-color : #ea504e;                             /* Color del fondo rojo            */
+/*    top              : 50%;                                 /* top al 50%                      */
+/*    left             : 50%;                                 /* left al 50%                     */
+/*    transform        : translateX(-50%) translateY(-50%);   /* Transformación para el centrado */
+/*}
+.Boton-Circular:hover::before, .Boton-Circular:active::before { width:300px; height:300px; }*/
+
+
+
+/*.contenedor:hover .imagen {-webkit-transform:scale(1.3);transform:scale(1.3);}
+.contenedor {overflow:hidden;}
+
+
+
+
+/*img.zoom {
+    width: 350px;
+    height: 200px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+ 
+.transition {
+    -webkit-transform: scale(1.8); 
+    -moz-transform: scale(1.8);
+    -o-transform: scale(1.8);
+    transform: scale(1.8);*/
+
+
+
+	
+    .zoom{
+
+        /* Aumentamos la anchura y altura durante 2 segundos */
+
+        transition: width 2s, height 2s, transform 2s;
+
+        -moz-transition: width 2s, height 2s, -moz-transform 2s;
+
+        -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+
+        -o-transition: width 2s, height 2s,-o-transform 2s;
+
+    }
+
+    .zoom:hover{
+
+        /* tranformamos el elemento al pasar el mouse por encima al doble de
+
+           su tamaño con scale(2). */
+
+        transform : scale(2);
+
+        -moz-transform : scale(2);      /* Firefox */
+
+        -webkit-transform : scale(2);   /* Chrome - Safari */
+
+        -o-transform : scale(2);        /* Opera */
+
+    }	
+	
+	
