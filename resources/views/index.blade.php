@@ -155,7 +155,7 @@ else
                 <div class="topmenu">
                 	<!--<span class="topbar-login"><i class="fa fa-user"></i> <a href="404.html">Login / Register</a></span>
 									<input type ='button' class="btn btn-warning"  value = 'boton' onclick="location.href = '{{ route('usuario.create') }}'"/>-->
-									<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/login') }}">Login / Register</a></span>
+									<span class="topbar-login"><i class="fa fa-user"></i> <a href="{{ url('/login') }}">Iniciar sesion / Registro</a></span>
 
 
 
