@@ -12,12 +12,14 @@
     <thead>
       <th>nombre</th>
       <th>correo</th>
+      <th>fecha creacion</th>
       <th>operacion</th>
     </thead>
     @foreach($users as $user)
     <tbody>
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
+      <td>{{$user->created_at}}</td>
       <td>
           {!!link_to_route('usuario.edit', $title='Editar',$parameters = $user->id, $attributes=['class'=>'btn btn-primary'])!!}
       </td>

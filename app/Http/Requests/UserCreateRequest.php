@@ -36,7 +36,7 @@ class UserCreateRequest extends Request
 
     public function messages(){
         return[
-          'name.required'=>'se requiere de un nombre completo',
+          'name.required'=>'se requiere de un nombre y de apellido paterno',
           //'email.required'=>'el e-mail ya se encunetra registrado',
           //'password.required'=>'la contraseña deve contener almenos una mayuscula'
 
