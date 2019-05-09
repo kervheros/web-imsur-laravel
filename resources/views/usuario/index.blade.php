@@ -8,15 +8,20 @@
 @endif
 
 @section('content')
+
   <table class="table">
     <thead>
-      <th>nombre</th>
-      <th>correo</th>
-      <th>fecha creacion</th>
+      <th>Fotografia</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Fecha creacion</th>
       <th>operacion</th>
     </thead>
     @foreach($users as $user)
     <tbody>
+      <td>
+        <img src="fotos/{{$user->path}}" alt="" style="width:100px;"/>
+      </td>
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
       <td>{{$user->created_at}}</td>

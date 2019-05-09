@@ -1,8 +1,8 @@
 @extends('layouts.admin')
   @section('content')
     @include('alerts.request')
-    
-  {!!Form::open(['route'=>'usuario.store','method'=>'POST'])!!}
+
+  {!!Form::open(['route'=>'usuario.store','method'=>'POST','files'=>true])!!}
 
   @include('usuario.form.usr')
 

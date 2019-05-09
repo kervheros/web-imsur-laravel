@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Carbon\Carbon;
+use DB;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -22,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['name', 'email', 'password','path'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -37,9 +39,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			$this->attributes['password'] =\Hash::make($valor);
 		}
 	}
-
+	//buscador
 	public function scopeSearch ($query, $name){
 		return $query -> where('name','LIKE',"%$name%");
 	}
+	//subir imagenes
+	public function setPathAttribute ($path){
+		$this->attributes['path'] = Carbon::now()->second.$path->getClientOriginalName();
+		$name = Carbon::now()->second.$path->getClientOriginalName();
+		\Storage::disk('local')->put($name, \File::get($path));
+	}
+
+	/*public static function Usuarios(){
+		return DB::table('users')
+			->select('users.*')
+			->get();
+	}*/
 
 }

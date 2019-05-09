@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+//use IMSUR\User;
 
 class UserController extends Controller {
 	public function __construct(){
@@ -51,13 +52,15 @@ class UserController extends Controller {
 	 */
 	public function store(UserCreateRequest $request)
 	{
-		\IMSUR\User::create([
+		\IMSUR\User::create($request->all());
+		return "listo";
+		/*\IMSUR\User::create([
 			'name'=>$request['name'],
 			'email'=>$request['email'],
 			'password'=>$request['password'],
 		]);
 
-		return redirect('/usuario')->with('message','Usuario registrado correctamente');
+		return redirect('/usuario')->with('message','Usuario registrado correctamente');*/
 	}
 
 	/**
