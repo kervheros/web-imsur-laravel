@@ -52,15 +52,19 @@ class UserController extends Controller {
 	 */
 	public function store(UserCreateRequest $request)
 	{
-		\IMSUR\User::create($request->all());
-		return "listo";
-		/*\IMSUR\User::create([
+		/*\IMSUR\User::create($request->all());
+		return "listo";*/
+		\IMSUR\User::create([
+			'ci'=>$request['ci'],
 			'name'=>$request['name'],
+			'direccion'=>$request['direccion'],
+			'telefono'=>$request['telefono'],
 			'email'=>$request['email'],
 			'password'=>$request['password'],
+			'path'=>$request['path'],
 		]);
 
-		return redirect('/usuario')->with('message','Usuario registrado correctamente');*/
+		return redirect('/usuario')->with('message','Usuario registrado correctamente');
 	}
 
 	/**
