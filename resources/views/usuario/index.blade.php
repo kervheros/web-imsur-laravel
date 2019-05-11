@@ -12,7 +12,10 @@
   <table class="table">
     <thead>
       <th>Fotografia</th>
+      <th>Cedula</th>
       <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
       <th>Correo</th>
       <th>Fecha creacion</th>
       <th>operacion</th>
@@ -20,9 +23,12 @@
     @foreach($users as $user)
     <tbody>
       <td>
-        <img src="fotos/{{$user->path}}" alt="" style="width:100px;"/>
+        <img src="fotos/{{$user->path}}" alt="" style="width:50px;"/>
       </td>
+      <td>{{$user->ci}}</td>
       <td>{{$user->name}}</td>
+      <td>{{$user->direccion}}</td>
+      <td>{{$user->telefono}}</td>
       <td>{{$user->email}}</td>
       <td>{{$user->created_at}}</td>
       <td>
