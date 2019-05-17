@@ -14,7 +14,7 @@ Route::get('/','FrontController@index');
 
 Route::get('admin','FrontController@admin');
 
-Route::get('contacto', 'WelcomeController@index');
+Route::get('contacto', 'FrontController@cont');
 
 Route::get('home', 'HomeController@index');
 
@@ -29,3 +29,5 @@ Route::get('login','FrontController@log');
 Route::get('register','FrontController@create');
 
 Route::resource('auth','FrontController');
+
+Route::resource('mail','MailController');

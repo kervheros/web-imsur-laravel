@@ -21,7 +21,7 @@ class FrontController extends Controller {
         return view('index');
    }
 
-   public function contacto(){
+   public function cont(){
         return view('contacto');
    }
 
