@@ -8,6 +8,9 @@
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
+	{!!Html::style('css/bootstrapcin.css')!!}
+	{!!Html::style('css/stylecin.css')!!}
+	{!!Html::script('js/jquery.mincin.js')!!}
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 

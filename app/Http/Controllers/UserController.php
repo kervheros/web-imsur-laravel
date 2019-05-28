@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
-//use IMSUR\User;
+use IMSUR\User;
 
 class UserController extends Controller {
 	public function __construct(){

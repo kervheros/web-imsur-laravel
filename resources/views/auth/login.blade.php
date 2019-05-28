@@ -52,7 +52,8 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										<!--<input type="checkbox" name="remember"> Remember Me-->
+										<div >{!!link_to('password/email', $title='Olvidaste tu contraseña ?', $attributes = null, $secure = null)!!}</div>
 									</label>
 								</div>
 							</div>

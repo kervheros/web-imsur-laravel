@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
+				<div class="panel-heading">Restablecer Contraseña</div>
 				<div class="panel-body">
 					@if (session('status'))
 						<div class="alert alert-success">
@@ -15,7 +15,7 @@
 
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<strong>Whoops!</strong> Hay algun problema con los datos ingresados.<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -24,24 +24,25 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<div class="main-contact">
+				 <h3 class="head">CONTACTANOS</h3>
+				 <p>Olvodaste tu contraseña y no puedes recordarlo</p>
+				 <p>ingresa tu correo con la que te registraste y nosotros
+				 te mandaremos un mensaje con un enlace para recuperarlo </p>
+				 <div class="contact-form">
+					 {!!Form::open(['url' => '/password/email'])!!}
+					 	<div class="col-md-6 contact-left">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
+					 		{!!Form::text('email')!!}
 						</div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
-								</button>
-							</div>
-						</div>
-					</form>
+						{!!Form::submit('Enviar link')!!}
+					 {!!Form::close()!!}
+				</div>
+			</div>
+
+
+
 				</div>
 			</div>
 		</div>

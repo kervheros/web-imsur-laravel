@@ -4,6 +4,7 @@ use IMSUR\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Auth;
 
 class PasswordController extends Controller {
 
@@ -27,12 +28,30 @@ class PasswordController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\PasswordBroker  $passwords
 	 * @return void
 	 */
-	public function __construct(Guard $auth, PasswordBroker $passwords)
+	//protected $redirect = 'admin';
+	protected $redirectPath = 'admin';
+
+	protected function resetPassword($user, $password){
+		$user->password = $password;
+		$user->save();
+		Auth::login($user);
+	}
+
+	public function redirectPath(){
+		if(property_exists($this, 'redirectPath')){
+			return $this->redirectPath;
+		}
+		return property_exists($this, 'redirectTo') ? $this-> redirectTo:'/admin';
+	}
+
+	/*public function __construct(Guard $auth, PasswordBroker $passwords)
 	{
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 
 		$this->middleware('guest');
-	}
+	}*/
+
+
 
 }

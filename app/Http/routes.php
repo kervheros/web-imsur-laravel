@@ -27,7 +27,15 @@ Route::get('logout','LogController@logout');
 
 Route::get('login','FrontController@log');
 Route::get('register','FrontController@create');
-
 Route::resource('auth','FrontController');
 
+
 Route::resource('mail','MailController');
+
+Route::get('password/email','Auth\PasswordController@getEmail');
+Route::post('password/email','Auth\PasswordController@postEmail');
+
+Route::get('password/reset/{token}','Auth\PasswordController@getReset');
+Route::post('password/reset','Auth\PasswordController@postReset');
+
+Route::get('register/verify/{code}','FrontController@verify');
