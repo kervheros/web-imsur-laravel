@@ -20,6 +20,7 @@ Route::get('home', 'HomeController@index');
 
 
 
+
 Route::resource('usuario','UserController');
 Route::resource('log','LogController');
 
@@ -39,3 +40,7 @@ Route::get('password/reset/{token}','Auth\PasswordController@getReset');
 Route::post('password/reset','Auth\PasswordController@postReset');
 
 Route::get('register/verify/{code}','FrontController@verify');
+
+
+Route::resource('factura','FacturasController');
+Route::get('factura','FacturasController@liquidaciones');

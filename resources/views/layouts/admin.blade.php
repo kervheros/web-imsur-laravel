@@ -41,7 +41,7 @@
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        
+
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
@@ -75,7 +75,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="nav nav-second-level" >
+                        <!--<li class="nav nav-second-level" >
 
                           {!! Form::open(['route'=>'usuario.index','method'=>'GET','class'=>'navbar-from pull-right'])!!}
                             <div class="input-group">
@@ -86,11 +86,17 @@
                             </div>
                           {!! Form::close()!!}
 
-                        </li>
+                        </li>-->
                       @if(Auth::user()->id ==1)
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                <li>
+                                    {!!Form::open(['route'=>'usuario.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
+                                    {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Busqueda de Usuarios'])!!}
+                                    <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                                    {!!Form::close()!!}
+                                </li>
                                 <li>
                                     <a href="{{route('usuario.create')}}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
@@ -101,16 +107,20 @@
                         </li>
                       @endif
                         <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Proveedores<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="{{url('/factura')}}"><i class='fa fa-plus fa-fw'></i> Liquidaciones</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Consultas</a>
+                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Anticipo de Cargas</a>
+                                </li>
+                                <li>
+                                  <a href="{{route('factura.create')}}"><i class='fa fa-list-ol fa-fw'></i> Pago de Transporte </a>
                                 </li>
                             </ul>
                         </li>
+
 
                         <!--<li>
                             <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
