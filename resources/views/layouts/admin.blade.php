@@ -116,7 +116,7 @@
                                     <a href="#"><i class='fa fa-list-ol fa-fw'></i> Anticipo de Cargas</a>
                                 </li>
                                 <li>
-                                  <a href="{{route('factura.create')}}"><i class='fa fa-list-ol fa-fw'></i> Pago de Transporte </a>
+                                  <a href="{{url('/factura')}}"><i class='fa fa-list-ol fa-fw'></i> Pago de Transporte </a>
                                 </li>
                             </ul>
                         </li>

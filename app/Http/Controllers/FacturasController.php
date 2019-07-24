@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use IMSUR\Http\Requests;
 use IMSUR\Http\Controllers\Controller;
 
-//use Illuminate\Routing\Route;
-
 class FacturasController extends Controller
 {
     /**
@@ -16,89 +14,97 @@ class FacturasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function index(Request $request)
+     {
+       $cod_liquidacion = $request->get('cod_liquidacion');
+       $transp = $request->get('transportista');
+       $n_placa = $request->get('placa');
+       $vista_transporte=\IMSUR\transpor::orderBy('cod_liquidacion','DESC')
+                        ->liquidacion($cod_liquidacion)
+                        ->transporte($transp)
+                        ->placa($n_placa)
+                        ->paginate(6);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-        $vista_transporte=\IMSUR\transpor::paginate(0);
-        return view ('facturaciones.pago_transport',compact('vista_transporte'));
-    }
+       return view ('facturaciones.pago_transport',compact('vista_transporte'));
+     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+     /**
+      * Show the form for creating a new resource.
+      *
+      * @return \Illuminate\Http\Response
+      */
+     public function create(Request $request)
+     {
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+     /**
+      * Store a newly created resource in storage.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @return \Illuminate\Http\Response
+      */
+     public function store(Request $request)
+     {
+         //
+     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+     /**
+      * Display the specified resource.
+      *
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function show($id)
+     {
+         //
+     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+     /**
+      * Show the form for editing the specified resource.
+      *
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function edit()
+     {
+         return view('facturaciones.liquidacion');
+     }
+
+     /**
+      * Update the specified resource in storage.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function update(Request $request, $id)
+     {
+         //
+     }
+
+     /**
+      * Remove the specified resource from storage.
+      *
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function destroy($id)
+     {
+         //
+     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function Liquidaciones(){
-      return view ('facturaciones.liquidacion');
-    }
-    /*public function pag_trans(){
-      return view ('facturaciones.pago_transport');
-    }*/
+     /**
+      * Show the form for creating a new resource.
+      *
+      * @return \Illuminate\Http\Response
+      */
+     public function Liquidaciones(){
+       return view ('facturaciones.liquidacion');
+     }
+     /*public function pag_trans(){
+       return view ('facturaciones.pago_transport');
+     }*/
 
-}
+ }

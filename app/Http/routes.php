@@ -43,4 +43,3 @@ Route::get('register/verify/{code}','FrontController@verify');
 
 
 Route::resource('factura','FacturasController');
-Route::get('factura','FacturasController@liquidaciones');
