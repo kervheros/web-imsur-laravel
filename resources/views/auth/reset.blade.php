@@ -25,10 +25,13 @@
 						{!!Form::hidden('token',$token,null)!!}
 
 						{!!Form::text('email',null,['value'=>"{{old('email')}}"])!!}
-
-						{!!Form::password('password')!!}
-						{!!Form::password('password_confirmation')!!}
-					</div>
+						<div class="form-group">
+						{!!Form::password('password',['data-toggle'=>'password','id'=>'password','class'=>'form-control','placeholder'=>'Ingrese tu nueva contraseña'])!!}
+						</div>
+						<div class="form-group">
+						{!!Form::password('password_confirmation',['data-toggle'=>'password','id'=>'password','class'=>'form-control','placeholder'=>'Repite tu contraseña'])!!}
+						</div>
+				</div>
 					{!!Form::submit('Restablecer contraseña')!!}
 				{!!Form::close()!!}
 			</div>

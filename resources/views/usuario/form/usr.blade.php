@@ -24,7 +24,7 @@
 </div>
 <div class="form-group ">
   {!!Form::label('password','Contraseña:')!!}
-  {!!Form::password('password',['class'=>'form-control','placeholder'=>'La contraseña deve tener mayusculas minusculas y numeros'])!!}
+  {!!Form::password('password',['data-toggle'=>'password','id'=>'password','class'=>'form-control','placeholder'=>'La contraseña deve tener mayusculas minusculas y numeros'])!!}
 </div>
 <div class="form-group ">
   {!!Form::label('foto','Fotografia:')!!}

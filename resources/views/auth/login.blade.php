@@ -40,7 +40,7 @@
 						<div class="form-group">
 							{!!Form::label('password','Contraseña:',['class'=>'col-md-4 control-label'])!!}
 							<div class="col-md-6">
-							{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese su contraseña'])!!}
+							{!!Form::password('password',['data-toggle'=>'password','id'=>'password','class'=>'form-control','placeholder'=>'Ingrese su contraseña'])!!}
 							</div>
 							<!--<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
