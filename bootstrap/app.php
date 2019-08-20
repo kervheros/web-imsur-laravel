@@ -41,6 +41,7 @@ $app->singleton(
 	'IMSUR\Exceptions\Handler'
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

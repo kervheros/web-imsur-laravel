@@ -55,7 +55,7 @@
     <td>{{$trans->proveedor}}</td>
     <td>{{$trans->transportista}}</td>
     <td>
-        {!!link_to_route('factura.edit',$title = 'Ver factura',$trans->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
+        {!!link_to_route('factura.edit',$title = 'Ver factura',$parameters= $trans->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
     </td>
   </tbody>
   @endforeach

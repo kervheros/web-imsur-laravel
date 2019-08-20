@@ -43,3 +43,18 @@ Route::get('register/verify/{code}','FrontController@verify');
 
 
 Route::resource('factura','FacturasController');
+Route::get('pdf','FacturasController@invoice');
+
+Route::get('pdf',function(){
+  //$pdf = App::make('dompdf.wrapper');
+
+  $pdf =PDF::loadView('facturaciones.vista2');
+
+  return $pdf->stream('prueba.pdf');
+});
+
+/*Route::get('pdf',function(){
+  $users=IMSUR\User::all();
+  $pdf=PDF::loadView('vista',['users'=>$users]);
+  return $pdf->stream('archivo.pdf');
+});*/

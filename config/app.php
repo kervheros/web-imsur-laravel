@@ -134,7 +134,10 @@ return [
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider',
+	 	'Illuminate\View\ViewServiceProvider',
+
+		 Barryvdh\DomPDF\ServiceProvider::class,
+
 
 		/*
 		 * Application Service Providers...
@@ -145,6 +148,7 @@ return [
 		'IMSUR\Providers\EventServiceProvider',
 		'IMSUR\Providers\RouteServiceProvider',
 		'Collective\Html\HtmlServiceProvider',
+
 
 
 	],
@@ -196,6 +200,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form' => 'Collective\Html\FormFacade',
     'Html' => 'Collective\Html\HtmlFacade',
+		'PDF' => 'Barryvdh\DomPDF\Facade',
 
 
 	],
