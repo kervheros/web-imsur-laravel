@@ -12,12 +12,14 @@
     {!!Html::style('css/metisMenu.min.css')!!}
     {!!Html::style('css/sb-admin-2.css')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
+    <!--stilo factura-->
+    <!--{!!Html::style('css/factura.css')!!}-->
     <!--oculta pass-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
-    <!---->
+    
+
+
+
+
 </head>
 
 <body>
@@ -70,7 +72,7 @@
                     <button type="submit" class="btn btn-default">
                       <span class="glyphicon glyphicon-search"></span>
                     </button>
-                  </div>
+                  </div>-->
                   <!--<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>-->
               <!--{!! Form::close()!!}-->
 
