@@ -18,7 +18,7 @@
 						</div>
 					@endif
 
-					{!!Form::open(['route'=> 'auth.store','method'=>'POST'])!!}
+					{!!Form::open(['route'=> 'auth.store','method'=>'POST','files'=>true])!!}
 					<!--<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
 

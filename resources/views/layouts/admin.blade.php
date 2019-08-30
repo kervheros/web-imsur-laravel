@@ -15,7 +15,7 @@
     <!--stilo factura-->
     <!--{!!Html::style('css/factura.css')!!}-->
     <!--oculta pass-->
-    
+
 
 
 
@@ -95,7 +95,7 @@
                         </li>-->
                       @if(Auth::user()->id ==1)
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
+                               <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     {!!Form::open(['route'=>'usuario.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
@@ -111,8 +111,6 @@
                                 </li>
                             </ul>
                         </li>
-                      @endif
-                        <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

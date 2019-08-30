@@ -30,3 +30,8 @@
   {!!Form::label('foto','Fotografia:')!!}
   {!!Form::file('path')!!}
 </div>
+
+<div>
+  {!!Form::label('codigo','Codigo Proveedor:')!!}
+  {!!Form::text('cod_prov',null,['class'=>'form-control','placeholder'=>'Ingrese su codigo que se le asigno'])!!}
+</div>

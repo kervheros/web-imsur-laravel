@@ -45,7 +45,7 @@ class FrontController extends Controller {
 
    public function store(UserCreateRequest $request){
 
-       $request['confirmation_code'] = str_random(25);
+       /**  para confirmacion de correo (fallido)
        \IMSUR\User::create([
          'ci'=>$request['ci'],
    			 'name'=>$request['name'],
@@ -61,12 +61,14 @@ class FrontController extends Controller {
       Mail::send('emails.confirmation_code' , $request, function($message) use ($request){
         $message->to($request['email'], $request['name'])->subject('Por favor confirma tu correo');
       });
-      return $user;
+      return $user;*/
 
-   		//return redirect('/login')->with('message','Usuario registrado correctamente');//
+      \IMSUR\User::create($request->all());
+
+      return redirect('/login')->with('message','Usuario registrado correctamente');
   }
 
-  public function verify($code){
+  /*public function verify($code){
     $user = \IMSUR\User::where('confirmation_code', $code)->first();
 
     if(! $user){
@@ -77,6 +79,6 @@ class FrontController extends Controller {
     $user->save();
 
     return redirect('/login')->with('notification','Has confirmado correctamente tu correo !');
-  }
+  }*/
 
 }

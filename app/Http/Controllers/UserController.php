@@ -62,6 +62,8 @@ class UserController extends Controller {
 			'email'=>$request['email'],
 			'password'=>$request['password'],
 			'path'=>$request['path'],
+			'cod_prov'=>$request['cod_prov'],
+
 		]);
 
 		return redirect('/usuario')->with('message','Usuario registrado correctamente');
