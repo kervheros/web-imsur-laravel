@@ -111,6 +111,8 @@
                                 </li>
                             </ul>
                         </li>
+                      @endif
+                        <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
