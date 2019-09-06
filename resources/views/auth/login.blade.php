@@ -49,9 +49,10 @@
 						</div>
 
 						<div class="form-group">
-							{!!Form::label('codigo','Codigo Proveedor',['class'=>'col-md-4 control-label'])!!}
+							{!!Form::label('codigo','Codigo Proveedor:',['class'=>'col-md-4 control-label'])!!}
 							<div class="col-md-6">
-							{!!Form::text('cod_prov',null,['class'=>'form-control','placeholder'=>'Ingrese su codigo de proveedor'])!!}
+								<!--        nombre de la caja de text   -->
+							{!!Form::text('cod_prove',null,['class'=>'form-control','placeholder'=>'Ingrese su codigo de proveedor'])!!}
 							</div>
 						</div>
 

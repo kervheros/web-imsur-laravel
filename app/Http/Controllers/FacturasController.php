@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use IMSUR\Http\Requests;
 use IMSUR\Http\Controllers\Controller;
+use Auth;
 
 class FacturasController extends Controller
 {
@@ -16,13 +17,22 @@ class FacturasController extends Controller
      */
      public function index(Request $request)
      {
+       //serecupera en una variable cod_proveedor logeado
+       $cod_proveed = Auth::user()->cod_prov;
+
+
+/**
        $cod_liquidacion = $request->get('cod_liquidacion');
        $transp = $request->get('transportista');
-       $n_placa = $request->get('placa');
+       //variable      recup valor de txtbox num_placa de view pago_trans
+       $n_placa = $request->get('num_placa');
        $vista_transporte=\IMSUR\transpor::orderBy('cod_liquidacion','DESC')
                         ->liquidacion($cod_liquidacion)
                         ->transporte($transp)
                         ->placa($n_placa)
+                        ->paginate(6);*/
+      $vista_transporte=\IMSUR\transpor::orderby('cod_liquidacion','DESC')
+                        ->proveer($cod_proveed)
                         ->paginate(6);
 
        return view ('facturaciones.pago_transport',compact('vista_transporte'));
@@ -55,9 +65,22 @@ class FacturasController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function show($id)
+     public function show(Request $request)
      {
-         //
+       // buscador para 3 valores en la misma ventana
+       $cod_liquidacion = $request->get('cod_liquidacion');
+       //$transp = $request->get('transportista');
+       //variable      recup valor de txtbox num_placa de view pago_trans
+       //$n_placa = $request->get('num_placa');
+       $vista_transporte=\IMSUR\transpor::orderBy('cod_liquidacion','DESC')
+                        ->liquidacion($cod_liquidacion)
+                        //->transporte($transp)
+                        //->placa($n_placa)
+                        ->paginate(6);
+
+        //$vista_transporte=\IMSUR\transpor::Search($request->codigo_liqui)->orderBy('cod_liquidacion','DESC')->paginate(6);
+
+        return view ('facturaciones.pago_transport',compact('vista_transporte'));
      }
 
      /**

@@ -9,16 +9,16 @@
   <div class="page-header">
                    <h1>
 
-                       {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'form-inline pull-center'])!!}
+                       {!!Form::open(['route'=>'factura.show','method'=>'GET','class'=>'form-inline pull-center'])!!}
                            <div class="form-group">
-                               {!!Form::text('cod_liquidacion', null, ['class' => 'form-control', 'placeholder' => 'Codigo'])!!}
+                               {!!Form::text('cod_liquidacion', null, ['class' => 'form-control', 'placeholder' => 'Codigo liquidacion'])!!}
                            </div>
-                           <div class="form-group">
+                      <!--     <div class="form-group">
                                {!!Form::text('transporte', null, ['class' => 'form-control', 'placeholder' => 'Transportista'])!!}
                            </div>
                            <div class="form-group">
-                               {!!Form::text('placa', null, ['class' => 'form-control', 'placeholder' => 'Nº Placa'])!!}
-                           </div>
+                               {!!Form::text('num_placa', null, ['class' => 'form-control', 'placeholder' => 'Nº Placa'])!!}
+                           </div> -->
                            <div class="form-group">
                                <button type="submit" class="btn btn-default">
                                    <span class="glyphicon glyphicon-search"></span>
@@ -28,7 +28,7 @@
                    </h1>
                  </div>
                </div>
-
+<!---------------------------------------------------------->
 <!--<li>
     {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
     {!!Form::text('cod_liquidacion',null,['class'=>'form-control','placeholder'=>'Busqueda de Usuarios'])!!}

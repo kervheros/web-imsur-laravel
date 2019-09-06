@@ -46,8 +46,8 @@ class LogController extends Controller
     public function store(LoginRequest $request)
     {
         //return $request->password;
-        //return $request->email;
-        if (Auth::attempt(['email'=>$request['email'], 'password' => $request['password'],'cod_prov'=>$request['cod_prov']])){
+        //return $request->email;                                                              bd      mandado desde login.blade para comparar su contenido
+        if (Auth::attempt(['email'=>$request['email'], 'password' => $request['password'],'cod_prov'=>$request['cod_prove']])){
           return Redirect::to('admin');
         }
         Session::flash('message-error','Datos son incorrectos');
