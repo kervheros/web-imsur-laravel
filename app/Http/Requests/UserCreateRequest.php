@@ -24,10 +24,12 @@ class UserCreateRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required',
-            'email'=>'required|unique:users',
+            'name'=>'required|regex:/^[A-Z]+$/',
+            'email'=>'required|email|unique:users',
             'password' => 'required|min:6|regex:^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,16}$^',
-
+            //'ci' => 'required|regex:/^[0-9]+$/',
+            'ci' => 'required|integer',
+            'cod_prov' => 'required',
 
 
 
@@ -37,8 +39,18 @@ class UserCreateRequest extends Request
     public function messages(){
         return[
           'name.required'=>'se requiere de un nombre y de apellido paterno',
-          //'email.required'=>'el e-mail ya se encunetra registrado',
-          //'password.required'=>'la contraseña deve contener almenos una mayuscula'
+          'name.regex' => 'El campo apellido paterno y nombre solo admite mayusculas',
+
+          'email.email'=>'El formato del correo es inavalido',
+          'email.unique' => 'El correo ya se encuentra registrado',
+
+          'password.min'=>'La contraseña deve tener mas de 6 caracteres',
+          'password.regex' => 'El formato de la contraseña es invalido',
+
+          'ci.integer'=>'El campo ci solo admite numeros',
+          'ci.required' => 'El campo ci es obligatorio',
+
+          'cod_prov.required' => 'El campo codigo proveedor es obligatorio '
 
         ];
     }

@@ -4,8 +4,8 @@
 </div>
 
 <div class="form-group ">
-  {!!Form::label('nombre','Nombre:')!!}
-  {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre'])!!}
+  {!!Form::label('nombre','Apellido Paterno y Nombre')!!}
+  {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'(ejemplo: CASTRO ALEJANDRO)'])!!}
 </div>
 
 <div class="form-group ">

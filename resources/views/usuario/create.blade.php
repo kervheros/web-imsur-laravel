@@ -6,6 +6,9 @@
 
   @include('usuario.form.usr')
 
-  {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
-  {!!Form::close()!!}
+  <div class="form-group">
+    {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+    {!!Form::close()!!}
+  </div>
+
   @endsection
