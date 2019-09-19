@@ -8,6 +8,8 @@ use IMSUR\Http\Requests;
 use IMSUR\Http\Controllers\Controller;
 use Auth;
 
+use View;
+
 class FacturasController extends Controller
 {
     /**
@@ -20,8 +22,11 @@ class FacturasController extends Controller
        //serecupera en una variable cod_proveedor logeado
        $cod_proveed = Auth::user()->cod_prov;
 
+       $cod_liquidacion = $request->get('cod_liquidacion');
+
 
 /**
+       //buscador con tres variables en la misma vista
        $cod_liquidacion = $request->get('cod_liquidacion');
        $transp = $request->get('transportista');
        //variable      recup valor de txtbox num_placa de view pago_trans
@@ -31,11 +36,13 @@ class FacturasController extends Controller
                         ->transporte($transp)
                         ->placa($n_placa)
                         ->paginate(6);*/
-      $vista_transporte=\IMSUR\transpor::orderby('cod_liquidacion','DESC')
+      $datos_transporte=\IMSUR\transpor::orderby('cod_liquidacion','DESC')
                         ->proveer($cod_proveed)
+
+                        ->liquidacion($cod_liquidacion)
                         ->paginate(6);
 
-       return view ('facturaciones.pago_transport',compact('vista_transporte'));
+       return view ('transportes.pago_transport',compact('datos_transporte'));
      }
 
      /**
@@ -56,7 +63,7 @@ class FacturasController extends Controller
       */
      public function store(Request $request)
      {
-         //
+
      }
 
      /**
@@ -65,22 +72,15 @@ class FacturasController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function show(Request $request)
+     //public function show($cod_liquidacion)
+     public function show($cod_liquidacion)
      {
-       // buscador para 3 valores en la misma ventana
-       $cod_liquidacion = $request->get('cod_liquidacion');
-       //$transp = $request->get('transportista');
-       //variable      recup valor de txtbox num_placa de view pago_trans
-       //$n_placa = $request->get('num_placa');
-       $vista_transporte=\IMSUR\transpor::orderBy('cod_liquidacion','DESC')
-                        ->liquidacion($cod_liquidacion)
-                        //->transporte($transp)
-                        //->placa($n_placa)
-                        ->paginate(6);
+       //$code_liq = \IMSUR\transpor::findOrFail($cod_liquidacion);
 
-        //$vista_transporte=\IMSUR\transpor::Search($request->codigo_liqui)->orderBy('cod_liquidacion','DESC')->paginate(6);
+       $code_liq = \IMSUR\transpor::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
+       return \View::make('transportes.show')->with('code_liq',$code_liq);
 
-        return view ('facturaciones.pago_transport',compact('vista_transporte'));
+       //return view ('transportes.show', compact('cod_liquidacion'));
      }
 
      /**
@@ -91,7 +91,7 @@ class FacturasController extends Controller
       */
      public function edit()
      {
-         return view('facturaciones.liquidacion');
+         return view('transportes.liquidacion');
      }
 
      /**
@@ -124,10 +124,16 @@ class FacturasController extends Controller
       * @return \Illuminate\Http\Response
       */
      public function Liquidaciones(){
-       return view ('facturaciones.liquidacion');
+       return view ('transportes.liquidacion');
      }
      /*public function pag_trans(){
        return view ('facturaciones.pago_transport');
+     }*/
+
+/**
+     public function verFactura($cod_liquidacion){
+       $code_liq = \IMSUR\transpor::findOrFail('$cod_liquidacion');
+       return view ('transportes.show')->with(compact('code_liq'));
      }*/
 
  }

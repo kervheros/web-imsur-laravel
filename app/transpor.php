@@ -9,10 +9,22 @@ use DB;
 
 class transpor extends Model
 {
+    //forma de asignar clave primaria a una tabla 
+    //protected $primaryKey = 'cod_liquidacion';
+
 
     protected $table = 'vista_transporte';
 
-    protected$fillable = ['cod_proveedor','cod_liquidacion','trans_1','transportista','proveedor','fecha_ingreso','fecha_pago','nombre_completo','ci','placa'];
+    protected$fillable = ['cod_proveedor',
+                          'cod_liquidacion',
+                          'trans_1',
+                          'transportista',
+                          'proveedor',
+                          'fecha_ingreso',
+                          'fecha_pago',
+                          'nombre_completo',
+                          'ci',
+                          'placa'];
 
     //realiza la busqueda se solo cod_proveedor para cargar en index
     public function scopeProveer ($query, $cod_proveed){

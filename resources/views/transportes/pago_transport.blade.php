@@ -9,7 +9,7 @@
   <div class="page-header">
                    <h1>
 
-                       {!!Form::open(['route'=>'factura.show','method'=>'GET','class'=>'form-inline pull-center'])!!}
+                       {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'form-inline pull-center'])!!}
                            <div class="form-group">
                                {!!Form::text('cod_liquidacion', null, ['class' => 'form-control', 'placeholder' => 'Codigo liquidacion'])!!}
                            </div>
@@ -49,16 +49,16 @@
     <th>Transportista</th>
     <th>Vista Factura</th>
   </thead>
-  @foreach($vista_transporte as $trans)
+  @foreach($datos_transporte as $trans)
   <tbody>
     <td>{{$trans->cod_liquidacion}}</td>
     <td>{{$trans->proveedor}}</td>
     <td>{{$trans->transportista}}</td>
     <td>
-        {!!link_to_route('factura.edit',$title = 'Ver factura',$trans->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
+        {!!link_to_route('factura.show',$title = 'Ver factura',$parameters = $trans->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
     </td>
   </tbody>
   @endforeach
 </table>
-{!!$vista_transporte->render()!!}
+{!!$datos_transporte->render()!!}
 @stop
