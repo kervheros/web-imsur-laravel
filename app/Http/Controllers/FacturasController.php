@@ -10,6 +10,8 @@ use Auth;
 
 use View;
 
+use NumeroALetras\NumeroALetras;
+
 class FacturasController extends Controller
 {
     /**
@@ -79,6 +81,7 @@ class FacturasController extends Controller
 
        $code_liq = \IMSUR\transpor::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
        return \View::make('transportes.show')->with('code_liq',$code_liq);
+
 
        //return view ('transportes.show', compact('cod_liquidacion'));
      }

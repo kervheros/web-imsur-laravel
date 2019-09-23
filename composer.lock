@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4aa3e5ebf88f2689563d6d66e379662",
+    "content-hash": "040c1639b34181a315aa03974e37c246",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -627,6 +627,52 @@
                 "storage"
             ],
             "time": "2019-02-01T08:50:36+00:00"
+        },
+        {
+            "name": "luecano/numero-a-letras",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luecano/numero-a-letras.git",
+                "reference": "059796cd2e53c3204b9ac49d1484853bbb5b5a7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luecano/numero-a-letras/zipball/059796cd2e53c3204b9ac49d1484853bbb5b5a7b",
+                "reference": "059796cd2e53c3204b9ac49d1484853bbb5b5a7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NumeroALetras\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luis Cano",
+                    "email": "luecano@gmail.com",
+                    "homepage": "https://github.com/luecano",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Convierte un número a letras con formato de moneda para facturación electrónica.",
+            "homepage": "https://github.com/luecano/numero-a-letras",
+            "keywords": [
+                "convertir",
+                "facturacion",
+                "letras",
+                "numero",
+                "sunat"
+            ],
+            "time": "2019-09-04T02:53:46+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2825,6 +2871,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2015-10-02T06:51:40+00:00"
         },
         {

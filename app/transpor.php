@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Auth\Authenticatable;
 use DB;
+use Carbon\Carbon;
 
 class transpor extends Model
 {
-    //forma de asignar clave primaria a una tabla 
+    //forma de asignar clave primaria a una tabla
     //protected $primaryKey = 'cod_liquidacion';
 
 
