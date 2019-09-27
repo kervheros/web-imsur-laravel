@@ -46,3 +46,5 @@ Route::resource('factura','FacturasController');
 //Route::get('factura/{cod_liquidacion}','FacturasController@show');
 //Route::get('factura','FacturasController@show');
 //Route::get('ver/{cod_liquidacion}','FacturasController@verFactura');
+
+Route::resource('anticipo','AnticipoController');

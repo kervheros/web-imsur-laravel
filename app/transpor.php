@@ -16,7 +16,7 @@ class transpor extends Model
 
     protected $table = 'vista_transporte';
 
-    protected$fillable = ['cod_proveedor',
+    protected $fillable = ['cod_proveedor',
                           'cod_liquidacion',
                           'trans_1',
                           'transportista',

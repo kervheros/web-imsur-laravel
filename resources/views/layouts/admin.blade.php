@@ -125,7 +125,7 @@
                     <a href="{{url('/factura')}}"><i class='fa fa-plus fa-fw'></i> Liquidaciones</a>
                   </li>
                   <li>
-                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Anticipo de Cargas</a>
+                    <a href="{{ url('/anticipo') }}"><i class='fa fa-list-ol fa-fw'></i> Anticipo de Cargas</a>
                   </li>
                   <li>
                     <a href="{{url('/factura')}}"><i class='fa fa-list-ol fa-fw'></i> Pago de Transporte </a>
