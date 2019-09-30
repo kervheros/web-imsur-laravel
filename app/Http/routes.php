@@ -48,3 +48,7 @@ Route::resource('factura','FacturasController');
 //Route::get('ver/{cod_liquidacion}','FacturasController@verFactura');
 
 Route::resource('anticipo','AnticipoController');
+
+//liquidaciones con funciones personalizadas colocar antes de 
+Route::get('liquidacion','LiquidacionController@principal')->name('liquidacion.principal');
+Route::get('liquidacion/{cod_liquidacion}','LiquidacionController@mostrar')->name('liquidacion.mostrar');

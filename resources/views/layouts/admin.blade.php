@@ -122,7 +122,7 @@
                     {!!Form::close()!!}
                   </li>
                   <li>
-                    <a href="{{url('/factura')}}"><i class='fa fa-plus fa-fw'></i> Liquidaciones</a>
+                    <a href="{{url('/liquidacion')}}"><i class='fa fa-plus fa-fw'></i> Liquidaciones</a>
                   </li>
                   <li>
                     <a href="{{ url('/anticipo') }}"><i class='fa fa-list-ol fa-fw'></i> Anticipo de Cargas</a>
