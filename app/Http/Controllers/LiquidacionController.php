@@ -32,8 +32,14 @@ class LiquidacionController extends Controller
     public function mostrar($cod_liquidacion)
     {
       $code_liq = \IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
-      return \View::make('liquidaciones.show')->with('code_liq',$code_liq);
-      
+      $code_reten = \IMSUR\retencion::where('cod_liquidacion', $cod_liquidacion)->get(); //visualizador de retenciones desde tabla induvidual
+      /**
+      $fede = \IMSUR\retencion::where('descripcion','=',FEDECOMIN)->select('nuevo')->firstOrFail();
+      $nuevo_ = round($fede,2);*/
+      return \View::make('liquidaciones.show')
+                  ->with('code_liq',$code_liq)
+                  ->with('code_reten',$code_reten);   //visualizador de retenviones
+                  //->with('nuevo_',$nuevo_);
     }
 
 

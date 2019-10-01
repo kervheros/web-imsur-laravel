@@ -12,8 +12,28 @@
 
 
 
+       <table class="table">
+
+         <thead>
+           <th>descripcion</th>
+           <th>porcentaje</th>
+           <th>total</th>
+
+         </thead>
+         @foreach ($code_reten as $ret)
+
+         <tbody>
+           <td>{{$ret->descripcion}}</td>
+           <td>{{$ret->porcentaje}}</td>
+           <td>{{ $ret->nuevo }}</td>
+
+         </tbody>
+        @endforeach
+      </table>
+
+
     </ul>
-    <p> {{ link_to('users', 'Volver atrás') }} </p>
+    <!--<p> {{ link_to('users', 'Volver atrás') }} </p>-->
  </body>
 
 @endsection
