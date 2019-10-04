@@ -116,7 +116,7 @@
                 <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                   <li>
-                    {!!Form::open(['route'=>'factura.show','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
+                    {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
                     {!!Form::text('codigo_liqui',null,['class'=>'form-control','placeholder'=>'codigo de liquidacion'])!!}
                     <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
                     {!!Form::close()!!}

@@ -25,7 +25,7 @@
          <tbody>
            <td>{{$ret->descripcion}}</td>
            <td>{{$ret->porcentaje}}</td>
-           <td>{{ $ret->nuevo }}</td>
+           <td>{{ $ret->total_descuento }}</td>
 
          </tbody>
         @endforeach

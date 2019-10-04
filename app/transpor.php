@@ -32,10 +32,10 @@ class transpor extends Model
       if($cod_proveed)
       return $query -> where('cod_proveedor', 'LIKE',"%$cod_proveed%");
     }
-    /** busqueda por codigo de liquidacion
+    // busqueda por codigo de liquidacion
     public function scopeSearch ($query, $codigo_liqui){
       return $query -> where('cod_liquidacion','LIKE',"%$codigo_liqui%");
-    }*/
+    }
 
 //  3 busquedas desde la misma vista (FacturasController-show)
     public function scopeLiquidacion ($query, $cod_liquidacion){

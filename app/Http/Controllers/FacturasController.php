@@ -40,7 +40,7 @@ class FacturasController extends Controller
                         ->paginate(6);*/
       $datos_transporte=\IMSUR\transpor::orderby('cod_liquidacion','DESC')
                         ->proveer($cod_proveed)
-
+                        //->search($request->codigo_liqui)   box busqueda desde layout admin
                         ->liquidacion($cod_liquidacion)
                         ->paginate(6);
 
