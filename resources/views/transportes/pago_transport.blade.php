@@ -2,8 +2,10 @@
 @section('content')
 
 <h1>Pago Transporte</h1>
-
+<br>
+<br>
 <!--<div class="page-header">-->
+@if (Auth::user()->id > 1)
 
   <div class="col-md-12">
   <div class="page-header">
@@ -28,6 +30,7 @@
                    </h1>
                  </div>
                </div>
+  @endif
 <!---------------------------------------------------------->
 <!--<li>
     {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}

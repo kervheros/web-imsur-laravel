@@ -111,7 +111,35 @@
                   </li>
                 </ul>
               </li>
+
+              <li>
+                <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    Ingrese codigo de liquidacion <br>de la factura que requiera a<br> continuacion.
+                  </li>
+                  <li>
+                    {!!Form::open(['route'=>'liquidacion.principal','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
+                    {!!Form::text('cod_liquidacion',null,['class'=>'form-control','placeholder'=>'Liquidaciones'])!!}
+                    <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                    {!!Form::close()!!}
+                  </li>
+                  <li>
+                    {!!Form::open(['route'=>'anticipo.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
+                    {!!Form::text('cod_liquidacion',null,['class'=>'form-control','placeholder'=>'Anticipo de carga'])!!}
+                    <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                    {!!Form::close()!!}
+                  </li>
+                  <li>
+                    {!!Form::open(['route'=>'factura.index','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
+                    {!!Form::text('cod_liquidacion',null,['class'=>'form-control','placeholder'=>'Pago transporte'])!!}
+                    <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                    {!!Form::close()!!}
+                  </li>
+                </ul>
+              </li>
               @endif
+              @if(Auth::user()-> id > 1)
               <li>
                 <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -132,6 +160,7 @@
                   </li>
                 </ul>
               </li>
+            @endif
 
 
               <!--<li>

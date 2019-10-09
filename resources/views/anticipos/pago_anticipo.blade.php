@@ -2,8 +2,10 @@
 @section('content')
 
 <h1>ANTICIPO DE CARGA</h1>
-
+<br>
+<br>
 <!--<div class="page-header">-->
+@if (Auth::user()->id > 1)
 
   <div class="col-md-12">
   <div class="page-header">
@@ -23,7 +25,7 @@
                    </h1>
                  </div>
                </div>
-
+@endif
 <table class="table">
 
   <thead>
