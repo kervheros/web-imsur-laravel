@@ -1,25 +1,135 @@
 @extends('layouts.admin')
 @section('content')
 
+<style type="text/css">
+#apDiv1 {
+width: 15%;
+height: 40%
+text-align: center;
+}
+</style>
   <body>
+    <p>&nbsp;</p>
+    <table width="100%" style="text-align:center">
+          <tr>
+            <td ><p>Empresa Minera del Sur &quot;IMSUR&quot;<br>
+              Avenida circunvalacion S/N<br>
+              Telefono 62-27793</p>
+              </td>
+            <td><h3><strong>LIQUIDACIONES<strong></h3></td>
+            <td ><img src="../images/logo-principal.png" width="248" height="50"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
 
     <ul>
-       <li> Nombre de usuario: {{ $code_liq->nombre_completo }} </li>
-       <li> Email: {{ $code_liq->proveedor }} </li>
-       <li> fecha {{ $code_liq->fecha_ingreso }}</li>
-       <li> monto: {{ $code_liq->monto }}</li>
+      @foreach ($code_liq as $liq)
+
+       <li> Fecha liquidacion : {{ $liq->fecha_liquidacion }}</li>
+
+    </ul>
+
+
+    <table width="100%" height="30%" border="1">
+      <thead>
+      <tr bgcolor="#00CCFF">
+        <th style="text-align:center"><h5><strong>Cod. liquidacion</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Proveedor</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Fecha ingreso</strong></h5></th>
+        <th style="text-align:center"><h5><strong>TMS</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Zinc (%)</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Plata DM</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Plomo (%)</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Monto Bs</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Prod. min</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Importe Total</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Reten de Ley</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Anticipo</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Trans</strong></h5></th>
+        <th style="text-align:center"><h5><strong>A cuenta</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Liqui adeudadas</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Prestamo</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Regalias (6%)</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Saldo pagar</strong></h5></th>
+
+      <tbody>
+      <tr style="text-align:center">
+        <td><h6>{{ $liq->cod_liquidacion }}</h6></td>
+        <td><h6>{{ $liq->proveedor }}</h6></td>
+        <td><h6>{{ $liq->fecha_ingreso }}</h6></td>
+        <td><h6>{{ $liq->TMS }}</h6></td>
+        <td><h6>{{ $liq->ZINC }}</h6></td>
+        <td><h6>{{ $liq->PLATA_DM }}</h6></td>
+        <td><h6>{{ $liq->PLOMO }}</h6></td>
+        <td><h6>{{ $liq->monto }}</h6></td>
+        <td><h6>{{ $liq->mas_transporte }}</h6></td>
+        <td><h6>{{ $liq->importe_total }}</h6></td>
+        <td><h6>{{ $liq->total_retenciones_ley }}</h6></td>
+        <td><h6>{{ $liq->menos_anticipos }}</h6></td>
+        <td><h6>{{ $liq->trans_1 }}</h6></td>
+        <td><h6>{{ $liq->menos_prestamos }}</h6></td>
+        <td><h6>{{ $liq->menos_liquidaciones_adeudadas }}</h6></td>
+        <td><h6>{{ $liq->prestamo }}</h6></td>
+        <td><h6>{{ $liq->menos_regalias }}</h6></td>
+        <td><h6>{{ $liq->saldo_a_pagar }}</h6></td>
+        @endforeach
+  </table>
+
+<p>&nbsp;</p>
+  <div>
+      <div>
+        <p><strong>Detalle Retenciones de Ley</strong></p>
+      </div>
+    <div>
+      <p>Cooperativa : {{ $liq->cooperativa }}</p>
+    </div>
+  </div>
+<table width="100%">
+  <tr>
+    <td>
+    <table width="70%" height="30%" >
+      <thead>
+      <tr bgcolor="#00CCFF" >
+        <th style="text-align:center">descripcion</th>
+        <th style="text-align:center">porcentaje(%)</th>
+        <th style="text-align:center">total (Bs)</th>
+
+        @foreach ($code_reten as $ret)
+      <tbody>
+        <tr style="text-align:center">
+        <td>{{$ret->descripcion}}</td>
+        <td>{{$ret->porcentaje}}</td>
+        <td>{{ $ret->total_descuento }}</td>
+        @endforeach
+        <tr bgcolor="#99CCCC" style="text-align:center">
+        <td colspan="2">Total retenciones </td>
+        <td> {{ $liq->total_retenciones_ley }}</td>
+  </table>
+</td>
+<td style="text-align:center">
+  <p>Recibi : {{ $liq->nombre_completo}}<br>
+   CI: {{ $liq->ci}}</p></td>
+</td>
+</tr>
+</table>
+    <p>&nbsp;</p>
+    <ul>
 
 
 
 
-       <table class="table">
+
+      <!--<table width="459" class="table">
 
          <thead>
-           <th>descripcion</th>
-           <th>porcentaje</th>
-           <th>total</th>
+           <th width="138">descripcion</th>
+           <th width="133">porcentaje</th>
+           <th width="365">total</th>
 
-         </thead>
          @foreach ($code_reten as $ret)
 
          <tbody>
@@ -27,13 +137,12 @@
            <td>{{$ret->porcentaje}}</td>
            <td>{{ $ret->total_descuento }}</td>
 
-         </tbody>
         @endforeach
-      </table>
+      </table>-->
 
 
     </ul>
     <!--<p> {{ link_to('users', 'Volver atrás') }} </p>-->
- </body>
+  </body>
 
 @endsection

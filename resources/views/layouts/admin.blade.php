@@ -12,6 +12,8 @@
   {!!Html::style('css/metisMenu.min.css')!!}
   {!!Html::style('css/sb-admin-2.css')!!}
   {!!Html::style('css/font-awesome.min.css')!!}
+
+  {!!html::style('css/cuadrito.css')!!}
   <!--stilo factura-->
   <!--{!!Html::style('css/factura.css')!!}-->
   <!--oculta pass-->
@@ -115,8 +117,8 @@
               <li>
                 <a href="#"><i class="fa fa-film fa-fw"></i> Facturaciones<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                  <li>
-                    Ingrese codigo de liquidacion <br>de la factura que requiera a<br> continuacion.
+                  <li style="text-align:center">
+                    Ingrese el codigo de liquidacion <br>de la factura que requiera ver.
                   </li>
                   <li>
                     {!!Form::open(['route'=>'liquidacion.principal','method'=>'GET','class'=>'input-group margin-bottom-sm'])!!}
@@ -181,7 +183,7 @@
 
     </nav>
 
-    <div id="page-wrapper">
+    <div id="page-wrapper" bgcolor="#303040">
       @yield('content')
     </div>
 
