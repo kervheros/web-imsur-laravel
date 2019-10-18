@@ -1,143 +1,86 @@
 @extends('layouts.admin')
 @section('content')
 
-  <!--<body>
+<style type="text/css">
+#apDiv1 {
+width: 15%;
+height: 40%
+text-align: center;
+}
+</style>
+  <body>
+    <p>&nbsp;</p>
+    <table width="100%" style="text-align:center">
+          <tr>
+            <td ><p>Empresa Minera del Sur &quot;IMSUR&quot;<br>
+              Avenida circunvalacion S/N<br>
+              Telefono 62-27793</p>
+              </td>
+            <td><h3><strong>ANTICIPO DE CARGA<strong></h3></td>
+            <td ><img src="../images/logo-principal.png" width="248" height="50"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
 
     <ul>
-       <li> Nombre de usuario: {{ $code_liq->nombre_completo }} </li>
-       <li> Email: {{ $code_liq->monto }} </li>
-       <li> fecha {{ $code_liq->fecha_ingreso }}</li>
+      @foreach ($code_liq as $anti)
+
+       <li> Fecha pago anticipo : {{ $anti->fecha_pago }}</li>
+
+    </ul>
 
 
+    <table width="100%" height="30%" border="1">
+      <thead>
+      <tr bgcolor="#00CCFF">
+        <th style="text-align:center"><h5><strong>Cod. liquidacion</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Fecha ingreso</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Proveedor</strong></h5></th>
+        <th style="text-align:center"><h5><strong>Anticipo</strong></h5></th>
+
+      <tbody>
+      <tr style="text-align:center">
+        <td><h6>{{ $anti->cod_liquidacion }}</h6></td>
+        <td><h6>{{ $anti->fecha_ingreso }}</h6></td>
+				<td><h6>{{ $anti->proveedor }}</h6></td>
+        <td><h6>{{ $anti->monto }}</h6></td>
+        @endforeach
+  </table>
+
+<p>&nbsp;</p>
+  <div>
+      <div>
+        <!--<p><strong>Detalle Retenciones de Ley</strong></p>-->
+      </div>
+    <div>
+      <p><strong>Importe total :</strong> {{ $anti->monto }}</p>
+    </div>
+  </div>
+<table width="100%">
+  <tr>
+    <td>
+
+			<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Son :</strong> {{ $conve }}</p>
+
+
+    </td>
+<td width="50%" style="text-align:center">
+  <p><strong>Recibio conforme:</strong> {{ $anti->nombre_completo}}<br>
+   CI: {{ $anti->ci}}</p></td>
+</td>
+</tr>
+</table>
+    <p>&nbsp;</p>
+    <ul>
 
 
     </ul>
-    <p> {{ link_to('users', 'Volver atrás') }} </p>
- </body>
-
-endsection
-
-
-<!--<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- TemplateBeginEditable name="doctitle" -->
-<!--<title>Documento sin título</title>
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
-<style type="text/css">
-#apDiv1 {
-	position: absolute;
-	left: 39px;
-	top: 22px;
-	width: 233px;
-	height: 68px;
-	z-index: 1;
-}
-#apDiv2 {
-	position: absolute;
-	left: 347px;
-	top: 33px;
-	width: 296px;
-	height: 53px;
-	z-index: 2;
-}
-#apDiv2 {
-	font-family: Verdana, Geneva, sans-serif;
-}
-#apDiv3 {
-	position: absolute;
-	left: 57px;
-	top: 119px;
-	width: 350px;
-	height: 40px;
-	z-index: 3;
-}
-#apDiv4 {
-	position: absolute;
-	left: 722px;
-	top: 26px;
-	width: 256px;
-	height: 61px;
-	z-index: 4;
-}
-#apDiv5 {
-	position: absolute;
-	left: 61px;
-	top: 296px;
-	width: 271px;
-	height: 38px;
-	z-index: 5;
-}
-#apDiv6 {
-	position: absolute;
-	left: 437px;
-	top: 296px;
-	width: 545px;
-	height: 55px;
-	z-index: 5;
-}
-#apDiv7 {
-	position: absolute;
-	left: 657px;
-	top: 326px;
-	width: 252px;
-	height: 50px;
-	z-index: 6;
-}
-</style>
-</head>
-
-<body>
-<div id="apDiv1">
-  <form id="form1" name="form1" method="post" action="">
-    <label for="textfield3"></label>
-    <div align="center"><strong>Ingenio Minero del Sur &quot;IMSUR&quot; Avenida circumvalacion  s/n
-     telefono 62-27793</strong></div>
-  </form>
-</div>
-<div id="apDiv2">
-  <h2><strong>ANTICIPO DE CARGA</strong></h2>
-</div>
-<div id="apDiv3">
-  <h3>Fecha pago anticipo :</h3>
-</div>
-<div id="apDiv4"><img src="../../Documents/Sitio sin nombre 4/logo-principal.png" width="248" height="50" /></div>
-<div id="apDiv5">
-  <h3>Importe total : </h3>
-</div>
-<div id="apDiv7">
-  <h3>C.I : </h3>
-</div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<div>
-  <table width="980" border="0">
-    <tr>
-      <th width="203" bgcolor="#00CCCC" scope="col">Cod. liquidacion</th>
-      <th width="257" bgcolor="#00CCCC" scope="col">Fecha ingreso</th>
-      <th width="346" bgcolor="#00CCCC" scope="col">Proveedor</th>
-      <th width="156" bgcolor="#00CCCC" scope="col">Anticipo</th>
-    </tr>
-    <tr>
-      <td bgcolor="#99CCFF">&nbsp;</td>
-      <td bgcolor="#99CCFF">&nbsp;</td>
-      <td bgcolor="#99CCFF">&nbsp;</td>
-      <td bgcolor="#99CCFF">&nbsp;</td>
-    </tr>
-  </table>
-</div>
-<p>&nbsp;	</p>
-<div id="apDiv6">
-  <h3>Recibio conforme :</h3>
-</div>
-</body>
+    <!--<p> {{ link_to('users', 'Volver atrás') }} </p>-->
+  </body>
 
 @endsection
-<!--</html>
-
-endsection-->

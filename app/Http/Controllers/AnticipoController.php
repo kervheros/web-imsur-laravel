@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use IMSUR\Http\Requests;
 use IMSUR\Http\Controllers\Controller;
 
+use NumeroALetras\NumeroALetras;
+
 use Auth;
 use View;
 
@@ -19,7 +21,7 @@ class AnticipoController extends Controller
      */
     public function index(Request $request)
     {
-      $cod_proveed = Auth::user()->cod_prov;
+      $cod_proveed = Auth::user()->cod_prov;  //guardamos en una variable el cod_proveedor del proveedor q se haya logeado
 
       $cod_liquidacion = $request->get('cod_liquidacion');
 
@@ -40,7 +42,7 @@ class AnticipoController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -62,8 +64,16 @@ class AnticipoController extends Controller
      */
     public function show($cod_liquidacion)
     {
-      $code_liq = \IMSUR\anticipo::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
-      return \View::make('anticipos.show')->with('code_liq',$code_liq);
+      //convertidor de numero a letra
+      //seleccionamos con cod_liquidacion todo de un usuaario como no usaremos foreach usamos firstOrFail y no get
+      $numero = \IMSUR\anticipo::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
+      $salida=$numero->monto; //se coloca en una variable el monto q tiene ese usuario
+      $conve = NumeroALetras::convertir($salida, 'Bs.'); //convertimo el monto en letras para factura solo convierte un numero en string no en int
+
+      //contenedor con datos de usuario selecionado listo para mostrar
+      $code_liq = \IMSUR\anticipo::where('cod_liquidacion', $cod_liquidacion)->get();
+      return \View::make('anticipos.show')->with('code_liq',$code_liq)
+                                          ->with('conve', $conve);
 
     }
 

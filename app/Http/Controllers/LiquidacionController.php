@@ -31,11 +31,10 @@ class LiquidacionController extends Controller
 
     public function mostrar($cod_liquidacion)
     {
-      $code_liq = \IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->get();
+      //$code_liq=\IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();  sirve para busquedas individuales sin nececidad de foreach
+      $code_liq = \IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->get(); //recupera tb datos pero mas para tablas con foreach tb sirve para individuales
       $code_reten = \IMSUR\retencion::where('cod_liquidacion', $cod_liquidacion)->get(); //visualizador de retenciones desde tabla induvidual
-      /**
-      $fede = \IMSUR\retencion::where('descripcion','=',FEDECOMIN)->select('nuevo')->firstOrFail();
-      $nuevo_ = round($fede,2);*/
+    
       return \View::make('liquidaciones.show')
                   ->with('code_liq',$code_liq)
                   ->with('code_reten',$code_reten);   //visualizador de retenviones
