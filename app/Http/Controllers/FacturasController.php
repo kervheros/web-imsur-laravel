@@ -77,10 +77,14 @@ class FacturasController extends Controller
      //public function show($cod_liquidacion)
      public function show($cod_liquidacion)
      {
-       //$code_liq = \IMSUR\transpor::findOrFail($cod_liquidacion);
 
-       $code_liq = \IMSUR\transpor::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
-       return \View::make('transportes.show')->with('code_liq',$code_liq);
+       $numero = \IMSUR\transpor::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
+       $salida=$numero->trans_1;
+       $conve = NumeroALetras::convertir($salida, 'Bs.');
+
+       $code_liq = \IMSUR\transpor::where('cod_liquidacion', $cod_liquidacion)->get();
+       return \View::make('transportes.show')->with('code_liq',$code_liq)
+                                             ->with('conve', $conve);
 
 
        //return view ('transportes.show', compact('cod_liquidacion'));
