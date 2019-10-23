@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+<body style="color:#fff">
+<p>&nbsp;</p>
 <h1>Pago Transporte</h1>
-<br>
-<br>
-<!--<div class="page-header">-->
+
 @if (Auth::user()->id > 1)
 
   <div class="col-md-12">
@@ -64,4 +64,5 @@
   @endforeach
 </table>
 {!!$datos_transporte->render()!!}
+</body>
 @stop

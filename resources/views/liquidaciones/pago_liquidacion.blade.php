@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+<body style="color:#fff">
+<p>&nbsp;</p>
 <h1>LIQUIDACIONES</h1>
-<br>
-<br>
-<!--<div class="page-header">-->
+
 @if (Auth::user()->id > 1)
   <div class="col-md-12">
   <div class="page-header">
@@ -45,4 +45,6 @@
   @endforeach
 </table>
 {!!$datos_liquido->render()!!}
-@stop
+
+</body>
+@endsection

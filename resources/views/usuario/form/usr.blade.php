@@ -1,3 +1,5 @@
+<body style="color:#dfe1f0">
+  <p>&nbsp;</p>
 <div class="form-group ">
   {!!Form::label('ci','Cedula de Identidad:')!!}
   {!!Form::text('ci',null,['class'=>'form-control','placeholder'=>'Ingrese su cedula identidad'])!!}
@@ -35,3 +37,4 @@
   {!!Form::label('codigo','Codigo Proveedor:')!!}
   {!!Form::text('cod_prov',null,['class'=>'form-control','placeholder'=>'Ingrese su codigo que se le asigno'])!!}
 </div>
+</body>

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 
+<body style="color:#fff">
+<p>&nbsp;</p>
 <h1>ANTICIPO DE CARGA</h1>
-<br>
-<br>
 <!--<div class="page-header">-->
 @if (Auth::user()->id > 1)
 

@@ -8,7 +8,7 @@ height: 40%
 text-align: center;
 }
 </style>
-  <body>
+  <body style="color:#fff">
     <p>&nbsp;</p>
     <table width="100%" style="text-align:center">
           <tr>
@@ -36,7 +36,7 @@ text-align: center;
 
     <table width="100%" height="30%" border="1">
       <thead>
-      <tr bgcolor="#00CCFF">
+      <tr bgcolor="#2984e6">
         <th style="text-align:center"><h5><strong>Cod. liquidacion</strong></h5></th>
         <th style="text-align:center"><h5><strong>Proveedor</strong></h5></th>
         <th style="text-align:center"><h5><strong>Fecha ingreso</strong></h5></th>
@@ -93,7 +93,7 @@ text-align: center;
     <td>
     <table width="70%" height="30%" >
       <thead>
-      <tr bgcolor="#00CCFF" >
+      <tr bgcolor="#2984e6" >
         <th style="text-align:center">descripcion</th>
         <th style="text-align:center">porcentaje(%)</th>
         <th style="text-align:center">total (Bs)</th>

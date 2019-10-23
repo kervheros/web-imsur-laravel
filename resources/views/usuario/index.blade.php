@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+<body style="color:#dfe1f0">
 @if(Session::has('message'))
 <div class ="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
@@ -10,7 +11,7 @@
 @section('content')
 
   <table class="table">
-    <thead>
+    <thead bgcolor="#134778">
       <th>Fotografia</th>
       <th>Cedula</th>
       <th>Nombre</th>
@@ -38,4 +39,6 @@
     @endforeach
   </table>
   {!!$users->render()!!}
+
+</body>
 @stop
