@@ -47,8 +47,8 @@
 
           </a>
           <ul class="dropdown-menu dropdown-user">
-            <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
-            </li>
+            <!--<li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
+            </li>-->
             <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
             </li>-->
             <li class="divider"></li>

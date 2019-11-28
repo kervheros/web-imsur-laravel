@@ -54,6 +54,7 @@ class UserController extends Controller {
 	{
 		/*\IMSUR\User::create($request->all());
 		return "listo";*/
+		/**
 		\IMSUR\User::create([
 			'ci'=>$request['ci'],
 			'name'=>$request['name'],
@@ -64,9 +65,34 @@ class UserController extends Controller {
 			'path'=>$request['path'],
 			'cod_prov'=>$request['cod_prov'],
 
-		]);
+		]); */
+		$usuarios = new User();
 
-		return redirect('/usuario')->with('message','Usuario registrado correctamente');
+		$usuarios->ci = $request->input('ci');
+		$usuarios->name = $request->input('name');
+		$usuarios->direccion = $request->input('direccion');
+		$usuarios->telefono = 	$request->input('telefono');
+		$usuarios->email = $request->input('email');
+		$usuarios->password = $request->input('password');
+
+		if ($request->hasfile('image')) {
+			$file = $request->file('image');
+			$extension = $file->getClientOriginalExtension();
+			$filename = time().'.'.$extension;
+			$file->move('uploads/',$filename);
+			$usuarios->image = $filename;
+		}else {
+			return $request;
+			$usuarios->image = '';
+		}
+		$usuarios->cod_prov = $request->input('cod_prov');
+
+		$usuarios->save();
+
+		return view ('usuario')->with('usuarios', $usuarios);
+
+		/**
+		return redirect('/usuario')->with('message','Usuario registrado correctamente'); */
 	}
 
 	/**

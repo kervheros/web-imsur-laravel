@@ -2,8 +2,8 @@
   @section('content')
     @include('alerts.request')
 
-  {!!Form::open(['route'=>'usuario.store','method'=>'POST','files'=>true])!!}
-
+  {!!Form::open(['route'=>'usuario.store','method'=>'POST','enctype'=>'multipart/form-data'])!!}
+  {{ csrf_field() }}
   @include('usuario.form.usr')
 
   <div class="form-group">

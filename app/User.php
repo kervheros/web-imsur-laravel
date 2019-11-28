@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['ci','name','direccion','telefono','email', 'password','path','confirmed','$confirmation_code','cod_prov'];
+	protected $fillable = ['ci','name','direccion','telefono','email', 'password','path','confirmed','$confirmation_code','cod_prov','image'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -44,11 +44,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $query -> where('name','LIKE',"%$name%");
 	}
 	//subir imagenes
+	/**
 	public function setPathAttribute ($path){
 		$this->attributes['path'] = Carbon::now()->second.$path->getClientOriginalName();
 		$name = Carbon::now()->second.$path->getClientOriginalName();
 		\Storage::disk('local')->put($name, \File::get($path));
-	}
+	}*/
 
 	/*public static function Usuarios(){
 		return DB::table('users')
