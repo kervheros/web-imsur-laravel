@@ -151,6 +151,9 @@
                   </li>
                 </ul>
               </li>
+              <li>
+                <a href="{{url('/carga')}}"><i class='fa fa-list-ol fa-fw'></i> Estado de cargas </a>
+              </li>
             @endif
 
 

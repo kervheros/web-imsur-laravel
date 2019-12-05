@@ -22,10 +22,17 @@ class LiquidacionController extends Controller
     {
       $cod_proveed=Auth::user()->cod_prov;
       $cod_liquidacion=$request->get('cod_liquidacion');
+      /** estado de carga dentro de liquidaciones
+      $stado = \IMSUR\stado_carga::orderBy('cod_liquidacion','DESC')
+                    ->nom($cod_proveed)
+                    ->paginate(6); */   //esta linea esencial par q muestra tabla con contenido sino no muestra
+
       $datos_liquido=\IMSUR\liquidacion::orderby('cod_liquidacion','DESC')
                     ->proveer($cod_proveed)
                     ->liquidacion($cod_liquidacion)
                     ->paginate(6);
+      /** parte de stado de cargas  para visualizar en vista liquidaciones
+      return view('liquidaciones.pago_liquidacion', compact('datos_liquido'),compact('stado')); */
       return view('liquidaciones.pago_liquidacion', compact('datos_liquido'));
     }
 
@@ -34,7 +41,7 @@ class LiquidacionController extends Controller
       //$code_liq=\IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();  sirve para busquedas individuales sin nececidad de foreach
       $code_liq = \IMSUR\liquidacion::where('cod_liquidacion', $cod_liquidacion)->get(); //recupera tb datos pero mas para tablas con foreach tb sirve para individuales
       $code_reten = \IMSUR\retencion::where('cod_liquidacion', $cod_liquidacion)->get(); //visualizador de retenciones desde tabla induvidual
-    
+
       return \View::make('liquidaciones.show')
                   ->with('code_liq',$code_liq)
                   ->with('code_reten',$code_reten);   //visualizador de retenviones
