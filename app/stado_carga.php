@@ -9,13 +9,14 @@ use DB;
 
 class stado_carga extends Model
 {
-    protected $table = 'vista_stado_cargas';
+    protected $table = 'vista_estado_cargas';
 
     protected $fillable = ['cod_liquidacion',
                            'cod_proveedor',
                            'proveedor',
                            'tipo',
-                           'nuevo'];
+                           'nuevo',
+                           'tipo2'];
 
    public function scopenom($query, $cod_proveed){
      return $query -> where ('cod_proveedor','like',"$cod_proveed");

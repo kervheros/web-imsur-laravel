@@ -37,7 +37,7 @@
       <tbody>
         <td>{{$carga->cod_liquidacion}} </td>
         <td>{{$carga->proveedor}} </td>
-        <td>{{$carga->tipo}} </td>
+        <td>{{$carga->tipo2}} </td>
         <td>{{$carga->nuevo}} </td>
       </tbody>
   @endforeach
