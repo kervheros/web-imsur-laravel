@@ -43,7 +43,7 @@
       <ul class="nav navbar-top-links navbar-right" style="background-color:#f5f120">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            {!!Auth::user()->name!!} {!!Auth::user()->cod_prov!!} <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            {!!Auth::user()->name!!} <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 
           </a>
           <ul class="dropdown-menu dropdown-user">
@@ -100,9 +100,11 @@
                     <span type="submit" class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
                     {!!Form::close()!!}
                   </li>
+                  {{--
                   <li>
                     <a href="{{route('usuario.create')}}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                   </li>
+                --}}
                   <li>
                     <a href="{{route('usuario.index')}}"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
                   </li>
