@@ -33,7 +33,10 @@ class liquidacion extends Model
                          'saldo_a_pagar',
                          'nombre_completo',
                          'ci'];
-
+    /**
+    public function usuario (){
+      return $this->belongsTo(User::class , 'cod_prov');
+    }  */
 
     public function scopeProveer ($query, $cod_proveed){
       if($cod_proveed)

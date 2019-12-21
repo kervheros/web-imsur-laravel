@@ -33,6 +33,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+/**
+ public function liquido(){
+	 return $this->hasMany(liquidacion::class, 'cod_proveedor');
+ } */
+
+
 	public function setPasswordAttribute($valor){
 		if(!empty($valor)){
 			//$this->attributes['password'] =($valor);
@@ -40,8 +46,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		}
 	}
 	//buscador
-	public function scopeSearch ($query, $name){
-		return $query -> where('name','LIKE',"%$name%");
+
+
+
+	public function scopeNombre ($query, $nombre){
+		if($nombre)
+		return $query -> where('name','LIKE',"%$nombre%");
 	}
 	//subir imagenes
 	public function setPathAttribute ($path){

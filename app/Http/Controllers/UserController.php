@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use IMSUR\User;
+use DB;
 
 class UserController extends Controller {
 	public function __construct(){
@@ -30,9 +31,13 @@ class UserController extends Controller {
 	 */
 	public function index(Request $request)
 	{
+		/**
 		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(8);
-		//$users=\IMSUR\User::paginate(2);
-		return view ('usuario.index',compact('users'));
+		//$users=\IMSUR\User::paginate(2);*/
+		$nombre= $request->get('name');
+		$users = DB::table('users')->paginate(7);
+		$busq = \IMSUR\User::orderby('cod_liquidacion','DESC')->nombre($nombre);
+		return view ('usuario.index',compact('users'),compact('busq'));
 	}
 
 	/**

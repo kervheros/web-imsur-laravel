@@ -31,7 +31,7 @@
       <td>{{$user->direccion}}</td>
       <td>{{$user->telefono}}</td>
       <td>{{$user->email}}</td>
-      <td>{{$user->created_at->toFormattedDateString()}}</td>
+      <td>{{$user->created_at}}</td>
       <td>
           {!!link_to_route('usuario.edit', $title='Editar',$parameters = $user->id, $attributes=['class'=>'btn btn-primary'])!!}
       </td>
