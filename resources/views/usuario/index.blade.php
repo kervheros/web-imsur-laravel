@@ -38,7 +38,7 @@
     </tbody>
     @endforeach
   </table>
-  {!!$users->render()!!}
+  {{--{!!$users->render()!!}--}}
 
 </body>
 @stop

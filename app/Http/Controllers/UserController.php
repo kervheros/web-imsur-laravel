@@ -35,9 +35,10 @@ class UserController extends Controller {
 		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(8);
 		//$users=\IMSUR\User::paginate(2);*/
 		$nombre= $request->get('name');
-		$users = DB::table('users')->paginate(7);
-		$busq = \IMSUR\User::orderby('cod_liquidacion','DESC')->nombre($nombre);
-		return view ('usuario.index',compact('users'),compact('busq'));
+		//$users = DB::table('users')->paginate(7);
+		$users = User::usuario()->Nom($nombre);
+
+		return view ('usuario.index',compact('users'));
 	}
 
 	/**
