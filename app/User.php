@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Carbon\Carbon;
 use DB;
+use IMSUR\User;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -17,8 +18,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var string
 	 */
-	protected $table = 'users';
 
+
+
+	protected $table = 'users';
+	protected $primaryKey ='cod_prov';
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -69,5 +73,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			->select('users.*')
 			->get();
 	}*/
+																							//l=liquidaciones tabla a la que se quiere llegar
+
+	public function liqui_u(){
+																							//llaveforanea de l   llaveprimaria de esta modelo solo si no es la verdadera llave primari y nosotros la declaramos arriva
+		return $this->hasMany('IMSUR\Liquidaciones','cod_proveedor',     'cod_prov');
+	}
+
 
 }

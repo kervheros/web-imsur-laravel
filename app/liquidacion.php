@@ -47,4 +47,7 @@ class liquidacion extends Model
       if($cod_liquidacion)
       return $query -> where('cod_liquidacion','LIKE',"%$cod_liquidacion%");
     }
+
+    
+
 }
