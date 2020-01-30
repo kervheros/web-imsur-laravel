@@ -28,8 +28,10 @@ text-align: center;
 
     <ul>
       @foreach ($code_liq as $anti)
+          @foreach ($anti->pago_a as $pago)
+            <li> Fecha pago anticipo : {{ $pago->fecha_pago }}</li>
+          @endforeach
 
-       <li> Fecha pago anticipo : {{ $anti->fecha_pago }}</li>
 
     </ul>
 
@@ -46,8 +48,8 @@ text-align: center;
       <tr style="text-align:center">
         <td><h6>{{ $anti->cod_liquidacion }}</h6></td>
         <td><h6>{{ $anti->fecha_ingreso }}</h6></td>
-				<td><h6>{{ $anti->proveedor }}</h6></td>
-        <td><h6>{{ $anti->monto }}</h6></td>
+				<td><h6>{{ $anti->proveedor_p->proveedor }}</h6></td>
+        <td><h6>{{ $anti->anticipo_ }}</h6></td>
         @endforeach
   </table>
 
@@ -57,7 +59,7 @@ text-align: center;
         <!--<p><strong>Detalle Retenciones de Ley</strong></p>-->
       </div>
     <div>
-      <p><strong>Importe total :</strong> {{ $anti->monto }}</p>
+    <p><strong>Importe total :</strong> {{ $anti->anticipo_ }}</p>
     </div>
   </div>
 <table width="100%">
@@ -70,8 +72,8 @@ text-align: center;
 
     </td>
 <td width="50%" style="text-align:center">
-  <p><strong>Recibio conforme:</strong> {{ $anti->nombre_completo}}<br>
-   CI: {{ $anti->ci}}</p></td>
+  <p><strong>Recibio conforme:</strong> {{ $anti->persona_p->nombre_completo}}<br>
+   CI: {{ $anti->persona_p->ci}}</p></td>
 </td>
 </tr>
 </table>

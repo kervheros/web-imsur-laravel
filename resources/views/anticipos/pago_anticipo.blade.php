@@ -13,7 +13,7 @@
 
                        {!!Form::open(['route'=>'anticipo.index','method'=>'GET','class'=>'form-inline pull-center'])!!}
                            <div class="form-group">
-                               {!!Form::text('cod_liquidacion', null, ['class' => 'form-control', 'placeholder' => 'Codigo liquidacion'])!!}
+                               {!!Form::text('cod_liqui', null, ['class' => 'form-control', 'placeholder' => 'Codigo liquidacion'])!!}
                            </div>
 
                            <div class="form-group">
@@ -36,7 +36,8 @@
   @foreach($datos_anticipo as $anti)
   <tbody>
     <td>{{$anti->cod_liquidacion}}</td>
-    <td>{{$anti->proveedor}}</td>
+    {{--<td>{{$anti->proveedor}}</td>--}}
+    <td>{{ $anti->usuario_l->name }}</td>
     <td>
         {!!link_to_route('anticipo.show',$title = 'Ver factura',$parameters = $anti->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
     </td>

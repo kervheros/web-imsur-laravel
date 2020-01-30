@@ -75,5 +75,15 @@ class Liquidaciones extends Model
 
     public function persona_p(){
     return $this->belongsTo('IMSUR\Persona','cod_persona','cod_persona');
-  }                                                       //colocar esto si en modelo persona no definimos una primarykey y la dejamos por defecto
+    }
+
+    public function scopeProveer ($query, $cod_proveed){
+      if($cod_proveed)
+      return $query->where('cod_proveedor', 'LIKE',"%$cod_proveed%");
+    }
+
+    public function scopeLiquidacion ($query, $cod_liquidacion){
+      if($cod_liquidacion)
+      return $query->where('cod_liquidacion','LIKE',"%$cod_liquidacion%");
+    }                                                     //colocar esto si en modelo persona no definimos una primarykey y la dejamos por defecto
 }

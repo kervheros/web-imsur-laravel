@@ -23,11 +23,19 @@ class AnticipoController extends Controller
     {
       $cod_proveed = Auth::user()->cod_prov;  //guardamos en una variable el cod_proveedor del proveedor q se haya logeado
 
-      $cod_liquidacion = $request->get('cod_liquidacion');
+      $cod_liquidacion = $request->get('cod_liqui');
 
+  /**
       $datos_anticipo=\IMSUR\anticipo::orderby('cod_liquidacion','DESC')
                         ->proveer($cod_proveed)
 
+                        ->liquidacion($cod_liquidacion)
+                        ->paginate(6);
+
+       return view ('anticipos.pago_anticipo',compact('datos_anticipo')); */
+
+       $datos_anticipo=\IMSUR\Liquidaciones::with(['pago_a','usuario_l','proveedor_p','persona_p'])
+                        ->proveer($cod_proveed)
                         ->liquidacion($cod_liquidacion)
                         ->paginate(6);
 
@@ -66,12 +74,12 @@ class AnticipoController extends Controller
     {
       //convertidor de numero a letra
       //seleccionamos con cod_liquidacion todo de un usuaario como no usaremos foreach usamos firstOrFail y no get
-      $numero = \IMSUR\anticipo::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
-      $salida=$numero->monto; //se coloca en una variable el monto q tiene ese usuario
+      $numero = \IMSUR\Liquidaciones::where('cod_liquidacion', $cod_liquidacion)->firstOrFail();
+      $salida=$numero->anticipo_; //se coloca en una variable el monto q tiene ese usuario
       $conve = NumeroALetras::convertir($salida, 'Bs.'); //convertimo el monto en letras para factura solo convierte un numero en string no en int
 
       //contenedor con datos de usuario selecionado listo para mostrar
-      $code_liq = \IMSUR\anticipo::where('cod_liquidacion', $cod_liquidacion)->get();
+      $code_liq = \IMSUR\Liquidaciones::with(['pago_a','usuario_l','proveedor_p','persona_p'])->where('cod_liquidacion',$cod_liquidacion)->get();
       return \View::make('anticipos.show')->with('code_liq',$code_liq)
                                           ->with('conve', $conve);
 
