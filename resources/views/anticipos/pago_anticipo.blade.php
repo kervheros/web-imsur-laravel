@@ -36,8 +36,7 @@
   @foreach($datos_anticipo as $anti)
   <tbody>
     <td>{{$anti->cod_liquidacion}}</td>
-    {{--<td>{{$anti->proveedor}}</td>--}}
-    <td>{{ $anti->usuario_l->name }}</td>
+    <td>{{$anti->proveedor_p->proveedor }}</td>
     <td>
         {!!link_to_route('anticipo.show',$title = 'Ver factura',$parameters = $anti->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}
     </td>

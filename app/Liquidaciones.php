@@ -70,12 +70,12 @@ class Liquidaciones extends Model
 
     public function pago_a(){                                 //la = liquidaciones_pago_anticipo
                                                               //llaveforanea de la
-      return $this->hasMany('IMSUR\liquidaciones_pago_anticipo','cod_liquidacion');
+      return $this->hasMany('IMSUR\Liquidaciones_pago_anticipo','cod_liquidacion','cod_liquidacion');
     }
 
     public function persona_p(){
     return $this->belongsTo('IMSUR\Persona','cod_persona','cod_persona');
-    }
+    }                                                     //colocar esto si en modelo persona no definimos una primarykey y la dejamos por defecto
 
     public function scopeProveer ($query, $cod_proveed){
       if($cod_proveed)
@@ -85,5 +85,16 @@ class Liquidaciones extends Model
     public function scopeLiquidacion ($query, $cod_liquidacion){
       if($cod_liquidacion)
       return $query->where('cod_liquidacion','LIKE',"%$cod_liquidacion%");
-    }                                                     //colocar esto si en modelo persona no definimos una primarykey y la dejamos por defecto
+    }
+
+
+
+
+    public function liqui_lab(){
+      return $this->hasMany('IMSUR\Liquidaciones_laboratorio','cod_liquidacion');
+    }
+
+    public function muestra_l(){
+      return $this->hasMany('IMSUR\Li_provee_leyes_mues','cod_liquidacion');
+    }
 }

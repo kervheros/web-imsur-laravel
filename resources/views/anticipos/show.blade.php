@@ -26,9 +26,62 @@ text-align: center;
           </tr>
         </table>
 
+        @foreach ($code_liq as $anti)
+            <li> Fecha pago anticipo : {{ $anti->fecha_pago }}</li>
+
+
+        <table width="100%" height="30%" border="1">
+          <thead>
+          <tr bgcolor="#2984e6">
+            <th style="text-align:center"><h5><strong>Cod. liquidacion</strong></h5></th>
+            <th style="text-align:center"><h5><strong>Fecha ingreso</strong></h5></th>
+            <th style="text-align:center"><h5><strong>Proveedor</strong></h5></th>
+            <th style="text-align:center"><h5><strong>Anticipo</strong></h5></th>
+
+          <tbody>
+          <tr style="text-align:center">
+            <td><h6>{{ $anti->cod_liquidacion }}</h6></td>
+            <td><h6>{{ $anti->liqui_a->fecha_ingreso }}</h6></td>
+    				<td><h6>{{ $anti->liqui_a->proveedor_p->proveedor }}</h6></td>
+            <td><h6>{{ $anti->monto }}</h6></td>
+            @endforeach
+      </table>
+
+      <p>&nbsp;</p>
+        <div>
+            <div>
+              <!--<p><strong>Detalle Retenciones de Ley</strong></p>-->
+            </div>
+          <div>
+          <p><strong>Importe total :</strong> {{ $anti->monto }}</p>
+          </div>
+        </div>
+      <table width="100%">
+        <tr>
+          <td>
+
+      			<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Son :</strong> {{ $conve }}</p>
+
+
+          </td>
+      <td width="50%" style="text-align:center">
+        <p><strong>Recibio conforme:</strong> {{ $anti->liqui_a->persona_p->nombre_completo}}<br>
+         CI: {{ $anti->liqui_a->persona_p->ci}}</p></td>
+      </td>
+      </tr>
+      </table>
+          <p>&nbsp;</p>
+          <ul>
+
+
+          </ul>
+
+
+{{--
     <ul>
       @foreach ($code_liq as $anti)
-          @foreach ($anti->pago_a as $pago)
+          @foreach ($anti->pago_a as $pago)  // aplicable cuando la consulta va de un modelo que sta con hasMany como comunicacion al otro modelo
             <li> Fecha pago anticipo : {{ $pago->fecha_pago }}</li>
           @endforeach
 
@@ -82,7 +135,7 @@ text-align: center;
 
 
     </ul>
-    <!--<p> {{ link_to('users', 'Volver atrás') }} </p>-->
+    <!--<p> {{ link_to('users', 'Volver atrás') }} </p>--> --}}
   </body>
 
 @endsection

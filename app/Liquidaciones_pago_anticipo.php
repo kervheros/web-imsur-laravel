@@ -19,4 +19,10 @@ class Liquidaciones_pago_anticipo extends Model
     public function liqui_a(){
       return $this->belongsTo('IMSUR\Liquidaciones','cod_liquidacion');
     }
+
+/**
+    public function scopeLiquidacion ($query, $cod_liquidacion){
+      if($cod_liquidacion)
+      return $query->where('cod_liquidacion','LIKE',"%$cod_liquidacion%");
+    }*/
 }
