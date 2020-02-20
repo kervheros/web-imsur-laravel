@@ -31,12 +31,13 @@ class UserController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-		/**
+
 		$users=\IMSUR\User::Search($request->name)->orderBy('id','DESC')->paginate(8);
 		//$users=\IMSUR\User::paginate(2);*/
-		$nombre= $request->get('name');
+		//$nombre= $request->get('name');
 		//$users = DB::table('users')->paginate(7);
-		$users = User::usuario()->Nom($nombre);
+		/*$users = User::orderBy('id','DESC')->nom($nombre)
+									->paginate(6);*/
 
 		return view ('usuario.index',compact('users'));
 	}
@@ -67,7 +68,7 @@ class UserController extends Controller {
 			'telefono'=>$request['telefono'],
 			'email'=>$request['email'],
 			'password'=>$request['password'],
-			'path'=>$request['path'],
+			//'path'=>$request['path'],
 			'cod_prov'=>$request['cod_prov'],
 
 		]);
@@ -94,7 +95,8 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$user = \IMSUR\User::find($id);
+		//$user = \IMSUR\User::find($id);  usar cuando pk es por defecto y no asignada en el modelo
+		$user = \IMSUR\User::where('id',$id)->first();
 		return view ('usuario.edit',['user'=>$user]);
 	}
 
@@ -106,7 +108,8 @@ class UserController extends Controller {
 	 */
 	public function update($id, UserUpdateRequest $request)
 	{
-		$user = \IMSUR\User::find($id);
+		//$user=\IMSUR\User::find($id); //se usa cuando la pk es por defecto y no asiganada en el modelo
+		$user = \IMSUR\User::where('id',$id)->first();
 		$user->fill($request->all());
 		$user->save();
 		Session::flash('message','Usuario editado correctamente');
@@ -121,7 +124,9 @@ class UserController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		\IMSUR\User::destroy($id);
+		//\IMSUR\User::destroy($id);
+		$user=\IMSUR\User::where('id',$id)->first();
+		$user->delete();
 		Session::flash('message','Usuario eliminado correctamente');
 		return redirect::to('/usuario');
 	}

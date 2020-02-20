@@ -45,10 +45,11 @@
 </div>--}}
 </body>
 
+<p>&nbsp;</p>
 {!!Form::submit('Actualizar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}
 
-{!!Form::open(['route'=>['usuario.destroy',$user->id],'method'=>'DELETE','onsubmit' => 'return confirm("seguro que quieres eliminar el registro?")'])!!}
-{!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
+{!!Form::open(['route'=>['usuario.destroy',$user->id],'method'=>'DELETE'])!!}
+{!!Form::submit('Eliminar',['class'=>'btn btn-danger','onclick'=>"return confirm('seguro que quieres eliminar el registro?')"])!!}
 {!!Form::close()!!}
 @endsection

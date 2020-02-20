@@ -7,12 +7,13 @@
   {{Session::get('message')}}
 </div>
 @endif
-
 @section('content')
-
+  <p>&nbsp;</p>
+  <h1 style="text-align:center">LISTA DE USUARIOS</h1>
+  
   <table class="table">
     <thead bgcolor="#134778">
-      <th>Fotografia</th>
+      {{--<th>Fotografia</th>--}}
       <th>Cedula</th>
       <th>Nombre</th>
       <th>Direccion</th>
@@ -23,9 +24,9 @@
     </thead>
     @foreach($users as $user)
     <tbody>
-      <td>
+      {{--<td>
         <img src="fotos/{{$user->path}}" alt="" style="width:50px;"/>
-      </td>
+      </td>--}}
       <td>{{$user->ci}}</td>
       <td>{{$user->name}}</td>
       <td>{{$user->direccion}}</td>
@@ -38,7 +39,7 @@
     </tbody>
     @endforeach
   </table>
-  {{--{!!$users->render()!!}--}}
+  {!!$users->render()!!}
 
 </body>
 @stop

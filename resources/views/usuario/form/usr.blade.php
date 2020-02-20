@@ -28,10 +28,10 @@
   {!!Form::label('password','Contraseña:')!!}
   {!!Form::password('password',['data-toggle'=>'password','id'=>'password','class'=>'form-control','placeholder'=>'La contraseña deve tener mayusculas minusculas y numeros'])!!}
 </div>
-<div class="form-group ">
+{{--<div class="form-group ">
   {!!Form::label('foto','Fotografia:')!!}
   {!!Form::file('path')!!}
-</div>
+</div>--}}
 
 <div>
   {!!Form::label('codigo','Codigo Proveedor:')!!}

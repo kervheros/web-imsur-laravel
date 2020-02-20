@@ -42,10 +42,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 return $this->hasMany(liquidacion::class, 'cod_proveedor');
  } */
 
-  public static function usuario(){
 
-		return DB::table('users')->paginate(7);
-	}
 
 	public function setPasswordAttribute($valor){
 		if(!empty($valor)){
@@ -57,9 +54,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
 
-	public function scopeNom($query, $nombre){
-		if($nombre)
-		return $query -> where('name','LIKE',"%$nombre%");
+	public function scopeSearch($query, $name){
+		return $query -> where('name','LIKE',"%$name%");
 	}
 	//subir imagenes
 	public function setPathAttribute ($path){
