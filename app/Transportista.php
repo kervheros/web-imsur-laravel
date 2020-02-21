@@ -12,7 +12,11 @@ class Transportista extends Model
                          'transportista',
                          'cod_placa'];
 
-    public function trans_li(){
-      return $this->hasMany('IMSUR\Liquidaciones','cod_transportista_li');
+    public function liqui_t(){
+      return $this->hasMany('IMSUR\Liquidaciones','cod_transportista');
+    }
+
+    public function trans_t(){
+      return $this->belongsTo('IMSUR\Placa','cod_placa');
     }
 }

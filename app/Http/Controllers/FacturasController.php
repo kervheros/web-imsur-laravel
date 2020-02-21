@@ -40,14 +40,13 @@ class FacturasController extends Controller
                         ->placa($n_placa)
                         ->paginate(6);*/
 
-      /**  habilitar esto para las vistas
+      //  habilitar esto para las vistas
       $datos_transporte=\IMSUR\transpor::orderby('cod_liquidacion','DESC')
                         ->proveer($cod_proveed)
                         //->search($request->codigo_liqui)   box busqueda desde layout admin
                         ->liquidacion($cod_liquidacion)
                         ->paginate(6);
-      */
-
+/**
       $datos_transporte=DB::table('liquidaciones')
                    ->join('transportista','transportista.cod_transportista','=','liquidaciones.cod_transportista')
                    ->join('proveedores','proveedores.cod_proveedor','=','liquidaciones.cod_proveedor')
@@ -55,12 +54,11 @@ class FacturasController extends Controller
                    ->join('persona','persona.cod_persona','=','liquidaciones_pago_transporte.cod_persona')
                    ->join('placa','placa.cod_placa','=','transportista.cod_placa')
                    ->select('proveedores.cod_proveedor','liquidaciones.cod_liquidacion','liquidaciones.trans_1','transportista.transportista','proveedores.proveedor','liquidaciones.fecha_ingreso','liquidaciones_pago_transporte.fecha_pago','persona.nombre_completo','persona.ci','placa.placa')
-                   
-                   ->paginate(7);
+
+                   ->paginate(7);*/
        return view ('transportes.pago_transport',compact('datos_transporte'));
      }
-
-     /**
+     /*
       * Show the form for creating a new resource.
       *
       * @return \Illuminate\Http\Response

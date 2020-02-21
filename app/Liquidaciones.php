@@ -89,6 +89,18 @@ class Liquidaciones extends Model
 
 
 
+    public function trans_li(){
+      return $this->belongsTo('IMSUR\Transportista','cod_transportista','cod_transportista');
+    }
+
+    public function pago_t(){
+      return $this->hasMany('IMSUR\Liquidaciones_pago_transporte','cod_liquidacion');
+    }
+
+
+
+
+
 
     public function liqui_lab(){
       return $this->hasMany('IMSUR\Liquidaciones_laboratorio','cod_liquidacion');
@@ -97,4 +109,6 @@ class Liquidaciones extends Model
     public function muestra_l(){
       return $this->hasMany('IMSUR\Li_provee_leyes_mues','cod_liquidacion');
     }
+
+
 }
