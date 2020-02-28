@@ -99,6 +99,21 @@ class Liquidaciones extends Model
 
 
 
+    public function total_r(){
+      return $this->hasMany('IMSUR\Liquidaciones_total_retenciones','cod_liquidacion');
+    }
+
+    public function reten(){
+      return $this->hasMany('IMSUR\retencion','cod_liquidacion');
+    }
+
+    public function coop(){
+      return $this->belongsTo('IMSUR\Cooperativa','cod_cooperativa');
+    }
+
+    public function deuda(){
+      return $this->hasMany('IMSUR\Liquidacion_deuda','cod_liquidacion');
+    }
 
 
 

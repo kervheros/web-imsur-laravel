@@ -57,7 +57,7 @@
   @foreach($datos_liquido as $liq)
   <tbody>
     <td>{{$liq->cod_liquidacion}}</td>
-    <td>{{$liq->proveedor}}</td>
+    <td>{{$liq->proveedor_p->proveedor}}</td>
     <td>{{ $liq->fecha_ingreso }}</td>
     <td>
         {!!link_to_route('liquidacion.mostrar',$title = 'Ver factura',$parameters = $liq->cod_liquidacion, $attributes=['class'=>'btn btn-primary'])!!}

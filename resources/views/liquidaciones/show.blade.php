@@ -59,7 +59,7 @@ text-align: center;
       <tbody>
       <tr style="text-align:center">
         <td><h6>{{ $liq->cod_liquidacion }}</h6></td>
-        <td><h6>{{ $liq->proveedor }}</h6></td>
+        <td><h6>{{ $liq->proveedor_p->proveedor }}</h6></td>
         <td><h6>{{ $liq->fecha_ingreso }}</h6></td>
         <td><h6>{{ $liq->TMS }}</h6></td>
         <td><h6>{{ $liq->ZINC }}</h6></td>
@@ -68,15 +68,18 @@ text-align: center;
         <td><h6>{{ $liq->monto }}</h6></td>
         <td><h6>{{ $liq->mas_transporte }}</h6></td>
         <td><h6>{{ $liq->importe_total }}</h6></td>
-        <td><h6>{{ $liq->total_retenciones_ley }}</h6></td>
-        <td><h6>{{ $liq->menos_anticipos }}</h6></td>
-        <td><h6>{{ $liq->trans_1 }}</h6></td>
-        <td><h6>{{ $liq->menos_prestamos }}</h6></td>
-        <td><h6>{{ $liq->menos_liquidaciones_adeudadas }}</h6></td>
-        <td><h6>{{ $liq->prestamo }}</h6></td>
-        <td><h6>{{ $liq->menos_regalias }}</h6></td>
-        <td><h6>{{ $liq->saldo_a_pagar }}</h6></td>
-        @endforeach
+      @endforeach
+      @foreach ($liq->total_r as $tot)
+        <td><h6>{{ $tot->total_retenciones_ley }}</h6></td>
+        <td><h6>{{ $tot->menos_anticipos }}</h6></td>
+        <td><h6>{{ $tot->menos_transporte }}</td>
+        <td><h6>{{ $tot->menos_prestamos }}</h6></td>
+        <td><h6>{{ $tot->menos_liquidaciones_adeudadas }}</h6></td>
+        <td><h6>{{ $tot->menos_prestamos }}</h6></td>
+        <td><h6>{{ $tot->menos_regalias }}</h6></td>
+        <td><h6>{{ $tot->saldo_a_pagar }}</h6></td>--}}
+      @endforeach
+
   </table>
 
 <p>&nbsp;</p>
@@ -85,7 +88,7 @@ text-align: center;
         <p><strong>Detalle Retenciones de Ley</strong></p>
       </div>
     <div>
-      <p>Cooperativa : {{ $liq->cooperativa }}</p>
+      <p>Cooperativa : {{ $liq->coop->cooperativa }}</p>
     </div>
   </div>
 <table width="100%">
@@ -107,12 +110,14 @@ text-align: center;
         @endforeach
         <tr bgcolor="#99CCCC" style="text-align:center">
         <td colspan="2">Total retenciones </td>
-        <td> {{ $liq->total_retenciones_ley }}</td>
+        @foreach ($liq->total_r as $tota)
+          <td> {{ $tota->total_retenciones_ley }}</td>
+        @endforeach
   </table>
 </td>
 <td style="text-align:center">
-  <p>Recibi : {{ $liq->nombre_completo}}<br>
-   CI: {{ $liq->ci}}</p></td>
+  <p>Recibi : {{ $liq->persona_p->nombre_completo}}<br>
+   CI: {{ $liq->persona_p->ci}}</p></td>
 </td>
 </tr>
 </table>

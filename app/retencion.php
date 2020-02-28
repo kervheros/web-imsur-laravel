@@ -22,6 +22,11 @@ class retencion extends Model
       return $query -> where('cod_proveedor', 'LIKE',"%$cod_proveed%");
     } */
 
+    public function liqui_re(){
+      return $this->belongsTo('IMSUR\Liquidaciones','cod_liquidacion');
+    }
+
+
     public function scopeLiquidacion ($query, $cod_liquidacion){
       if($cod_liquidacion)
       return $query -> where('cod_liquidacion','LIKE',"%$cod_liquidacion%");
