@@ -35,11 +35,27 @@
   </thead>
   @foreach ($stado as $carga)
       <tbody>
-        <td>{{$carga->cod_liquidacion}} </td>
-        <td>{{$carga->proveedor}} </td>
-        <td>{{$carga->tipo2}} </td>
-        <td>{{$carga->nuevo}} </td>
+        @foreach ($carga->muestra_l as $tipo_m)
+
+          @foreach ($carga->liqui_lab as $lab)
+
+                <td>{{ $carga->cod_liquidacion }}</td>
+                <td>{{ $carga->proveedor_p->proveedor }}</td>
+                <td>{{ $tipo_m->tipo }}
+                @if ($lab->leyes_imsur == 'NO')
+                  <td>Carga sin leyes</td>
+                @else
+                  <td>Carga lista para transar</td>
+                @endif
+
+          @endforeach
+        @endforeach
+          {{--<td>{{$carga->cod_liquidacion}} </td>
+          <td>{{$carga->proveedor}} </td>
+          <td>{{$carga->tipo2}} </td>
+          {{--<td>{{$carga->nuevo}} </td>--}}
       </tbody>
+
   @endforeach
 </table>
 

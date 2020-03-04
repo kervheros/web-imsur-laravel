@@ -21,8 +21,8 @@ class StadoController extends Controller
     {
         $cod_proveed = Auth::user()->cod_prov;
         $cod_liquidacion=$request->get('cod_liquidacion');
-        $stado=\IMSUR\stado_carga::orderBy('cod_liquidacion','DESC')
-                    ->nom($cod_proveed)
+        $stado=\IMSUR\Liquidaciones::with(['liqui_lab','muestra_l','proveedor_p'])->where('estado','no')
+                    ->proveer($cod_proveed)
                     ->liquidacion ($cod_liquidacion)
                     ->paginate(6);
 
